@@ -1,3 +1,1471 @@
+let carrerasISIL = {
+    disenoUXUI: {
+        area: "Área de Diseño",
+        nombre: "Diseño de Medios Interactivos (UX/UI)",
+        cursos: [
+            "Metodología e Investigación de Diseño",
+            "Investigación Creativa y Exploración de Insights",
+            "Principios de Interacción y Usabilidad",
+            "Comportamiento del Consumidor y Sociología Comercial",
+            "Behavioral Design",
+            "Estrategia de Diseño UX",
+            "Redacción UX",
+            "Fundamentos Visuales",
+            "Historia de la Imagen Contemporánea",
+            "Semiótica Visual",
+            "Branding Digital",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Diseño de Interfaces Gráficas",
+            "Motion UI y Microinteracciones",
+            "Diseño UI y Experiencia de Usuario",
+            "Diseño y Gestión de Contenidos Digitales",
+            "Portafolio y Branding Digital",
+            "English B1 - I",
+            "English B1 - II",
+            "Introducción a la Programación",
+            "Diseño y Desarrollo Web",
+            "Diseño de Aplicaciones Móviles",
+            "Inteligencia Artificial Aplicada",
+            "Fundamentos de Marketing",
+            "Comunicación Digital Efectiva",
+            "Modelos de Negocios y Startups",
+            "Diseño de Negocios Digitales",
+            "E-commerce y Mobile Marketing",
+            "Transformación Digital",
+            "Gestión de Proyectos",
+            "Diseño y Control de Indicadores",
+            "Comunicación Escrita",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Ética Profesional",
+            "Resolución de Conflictos"
+        ]
+    },
+
+    disenoGrafico: {
+        area: "Área de Diseño",
+        nombre: "Diseño Gráfico",
+        cursos: [
+            "Historia de la Imagen Contemporánea",
+            "Taller de Expresión Gráfica",
+            "Fundamentos Visuales",
+            "Tipografía",
+            "Comunicación Escrita",
+            "Ilustración",
+            "Semiótica Visual",
+            "Diseño de Información",
+            "Diseño y Producción Editorial",
+            "Señalética",
+            "Producción Gráfica",
+            "Proyectos de Identidad y Comunicación de Marca",
+            "Packaging",
+            "Representación Espacial y Volumetría",
+            "Gráfica Ambiental",
+            "Audiovisuales",
+            "Fotografía",
+            "Fotografía Publicitaria",
+            "English B1 - I",
+            "English B1 - II",
+            "Portafolio y Branding Personal",
+            "Fundamentos de Medios Digitales",
+            "Gestión de Proyectos",
+            "Investigación Creativa y Exploración de Insights",
+            "Metodología e Investigación de Diseño",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Inteligencia Artificial Aplicada",
+            "Diseño de Interfaces Gráficas",
+            "Diseño UI y Experiencia de Usuario",
+            "Diseño y Desarrollo Web",
+            "Diseño y Gestión de Contenidos Digitales",
+            "Proyectos Interactivos",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional"
+        ]
+    },
+
+    disenoInteriores: {
+        area: "Área de Diseño",
+        nombre: "Diseño de Interiores",
+        cursos: [
+            "Diseño Habitacional Sostenible",
+            "Diseño Integral de Espacios Interiores Residenciales",
+            "Diseño de Mobiliario",
+            "Escenografía y Espacios Expositivos",
+            "Señalética",
+            "Dirección y Diseño Integral de Espacios Comerciales",
+            "Visual Merchandising y Retail Design",
+            "Procesos Constructivos e Instalaciones",
+            "Materiales y Acabados",
+            "Iluminación",
+            "Dirección de Obra",
+            "Taller de Expresión Gráfica",
+            "Representación Espacial y Volumetría",
+            "Dibujo Técnico",
+            "Fotografía",
+            "English B1 - I",
+            "English B1 - II",
+            "Investigación Creativa y Exploración de Insights",
+            "Análisis del Entorno de Negocios",
+            "Gestión de Proyectos",
+            "Costos y Presupuestos de Diseño",
+            "Retail Management",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Dibujo y Representación 3D",
+            "Inteligencia Artificial Aplicada",
+            "Tecnología Digital en Interiores",
+            "Fundamentos Visuales",
+            "Teoría e Historia del Diseño de Espacios",
+            "Taller de Diseño de Espacios",
+            "Ergonomía y Antropometría",
+            "Ambientación y Color",
+            "Planificación de Establecimientos y Diseño de Ambientes",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    animacionDigital3D: {
+        area: "Área de Diseño",
+        nombre: "Animación Digital y Diseño 3D",
+        cursos: [
+            "Diseño Digital 3D",
+            "Modelado 3D para Videojuegos",
+            "Modelado de Estructuras Básicas",
+            "Escultura Digital",
+            "Escultura Digital Avanzada",
+            "Creación de Escenarios 3D",
+            "Entorno Tridimensional",
+            "Shading y Texturizado",
+            "Animación de Personajes Tridimensionales",
+            "Animación Facial",
+            "Animación Tradicional",
+            "Introducción a la Programación",
+            "Taller Profesional de Animación y Estructura",
+            "Sistemas Estructurales para Animación 3D y Videojuegos",
+            "Sistemas Estructurales Faciales",
+            "Scripting de Lenguajes Nativos",
+            "Edición y Postproducción (Mocap)",
+            "English B1 - I",
+            "English B1 - II",
+            "Comunicación Escrita",
+            "Fundamentos Visuales",
+            "Taller de Artes Visuales",
+            "Taller de Escultura",
+            "Taller de Expresión Gráfica",
+            "Lenguaje y Estética Audiovisual",
+            "Narrativa Audiovisual y Storytelling",
+            "Semiótica Visual",
+            "Inteligencia Artificial Aplicada",
+            "Elevación de Estructuras Tridimensionales",
+            "Proyecto Estructural de Animación Avanzada",
+            "Simuladores Líquidos",
+            "Composición Cinematográfica",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Ética Profesional",
+            "Resolución de Conflictos"
+        ]
+    },
+
+    videojuegos: {
+        area: "Área de Diseño",
+        nombre: "Diseño y Desarrollo de Videojuegos",
+        cursos: [
+            "Diseño de Estrategias para Videojuegos",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Introducción a la Industria de Videojuegos",
+            "Diseño de Componentes para Videojuegos en 2D",
+            "Diseño de Videojuegos en 2D",
+            "Diseño de Escenarios para Videojuegos 3D",
+            "Modelado 3D para Videojuegos",
+            "Animación para Videojuegos 3D",
+            "Diseño de Personajes para Videojuegos 3D",
+            "Taller de Artes Visuales",
+            "Sistema de Sonidos para Videojuegos",
+            "Introducción al Desarrollo de Videojuegos",
+            "Introducción a la Programación",
+            "Desarrollo de Videojuegos en 2D Básico",
+            "Gestión de Dispositivos Tecnológicos",
+            "Desarrollo de Videojuegos en 2D Avanzado",
+            "Programación Orientada a Objetos",
+            "Desarrollo de Herramientas para Videojuegos",
+            "Diseño y Programación de Base de Datos",
+            "Desarrollo de Videojuegos en 3D",
+            "Desarrollo de Videojuegos Multiplataforma",
+            "Desarrollo de Videojuegos Multiplayer",
+            "Proyecto Tecnológico",
+            "English B1 - I",
+            "English B1 - II",
+            "Matemática Aplicada",
+            "Cálculo para Ciencias e Ingeniería",
+            "Inteligencia Artificial Aplicada",
+            "Inteligencia Artificial para Videojuegos",
+            "Algoritmo y Estructura de Datos Basados en Inteligencia Artificial",
+            "Análisis del Entorno de Negocios",
+            "Gestión de Proyectos",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas"
+        ]
+    },
+
+    fotografiaProduccionImagen: {
+        area: "Área de Comunicación",
+        nombre: "Fotografía y Producción de Imagen",
+        cursos: [
+            "Fundamentos de Marketing",
+            "Postproducción, Edición y Gestión de Archivos",
+            "Dirección de Arte",
+            "Administración de Empresas y Responsabilidad Social",
+            "Costos y Presupuestos de Producción Fotográfica",
+            "Branding y Gestión de Productos",
+            "Investigación Creativa y Exploración de Insights",
+            "Investigación de Mercados Cuali-Cuanti",
+            "Gestión y Modelo de Negocios Fotográficos",
+            "Portafolio Profesional Fotográfico",
+            "Fotografía",
+            "Historia de la Imagen Contemporánea",
+            "Fundamentos Visuales",
+            "Comunicación Escrita",
+            "Semiótica Visual",
+            "Producción Gráfica",
+            "Taller de Iluminación",
+            "Iluminación de Estudio",
+            "Taller de Audiovisuales",
+            "Géneros Fotográficos",
+            "Fotografía Publicitaria",
+            "Fotografía Periodística",
+            "Taller de Food Styling",
+            "Fotografía de Eventos Sociales",
+            "Fotografía y Producción de Moda",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Retoque Digital",
+            "Inteligencia Artificial Aplicada",
+            "Taller de Redes Sociales para Fotógrafos",
+            "Diseño de Negocios Digitales",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Dirección de Personas",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    comunicacionAudiovisual: {
+        area: "Área de Comunicación",
+        nombre: "Comunicación Audiovisual",
+        cursos: [
+            "Historia de los Medios",
+            "Lenguaje y Estética Audiovisual",
+            "Narrativa Audiovisual y Storytelling",
+            "Construcción de Guion",
+            "Lenguaje Televisivo",
+            "Dirección Escénica y Dramaturgia",
+            "Taller de Guion Audiovisual Transmedia",
+            "Tipografía",
+            "Semiótica Visual",
+            "Producción Audiovisual",
+            "Producción y Realización Audiovisual Publicitaria",
+            "Taller de Audiovisuales",
+            "Taller de Contenidos de Ficción y Seriales",
+            "Taller de Documentales",
+            "Proyecto de Comunicación Audiovisual",
+            "Fotografía",
+            "English B1 - I",
+            "English B1 - II",
+            "Edición Audiovisual y Herramientas de Inteligencia Artificial",
+            "Postproducción Audiovisual y Efectos Especiales",
+            "Sonido y Musicalización",
+            "Taller de Iluminación",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Tendencias Digitales Audiovisuales",
+            "Inteligencia Artificial Aplicada",
+            "Medios Digitales y Plataformas de Comunicación",
+            "Fundamentos de Marketing",
+            "Plan de Medios Integrados",
+            "Administración de Empresas y Responsabilidad Social",
+            "Legislación en las Comunicaciones",
+            "Comunicación Escrita",
+            "Investigación Creativa y Exploración de Insights",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional"
+        ]
+    },
+
+    comunicacionIntegral: {
+        area: "Área de Comunicación",
+        nombre: "Comunicación Integral",
+        cursos: [
+            "Administración de Empresas y Responsabilidad Social",
+            "Fundamentos de Marketing",
+            "Organización de Eventos",
+            "Comunicación Interna",
+            "Comunicación Externa",
+            "Comunicación para el Desarrollo Sostenible",
+            "Relaciones Públicas",
+            "Proyectos de Comunicación Corporativa",
+            "Gestión y Organización de la Comunicación",
+            "Legislación en las Comunicaciones",
+            "Proyectos de Comunicación Transmedia",
+            "Guion y Producción de Radio",
+            "Construcción de Guion",
+            "Lenguaje y Estética Audiovisual",
+            "Plan de Medios Integrados",
+            "Taller de Audiovisuales",
+            "Técnicas Multimedia",
+            "Producción Audiovisual",
+            "English B1 - I",
+            "English B1 - II",
+            "Fundamentos de Medios Digitales",
+            "Fotografía",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Inteligencia Artificial Aplicada",
+            "Investigación Creativa y Exploración de Insights",
+            "Estrategia de Medios Digitales y Social Media",
+            "Comunicación Escrita",
+            "Géneros Periodísticos",
+            "Redacción Periodística",
+            "Fuentes de Información",
+            "Tipografía",
+            "Historia de los Medios",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    periodismoDeportivo: {
+        area: "Área de Comunicación",
+        nombre: "Periodismo Deportivo",
+        cursos: [
+            "Relaciones Públicas",
+            "Comunicación Escrita",
+            "Redacción Periodística Deportiva",
+            "Diseño de Publicaciones Deportivas",
+            "Géneros Periodísticos",
+            "Gestión y Producción de Publicaciones",
+            "Legislación en las Comunicaciones",
+            "Taller de Investigaciones",
+            "Proyectos Periodísticos",
+            "Fundamentos de Medios Digitales",
+            "Fotografía",
+            "Inteligencia Artificial Aplicada",
+            "Comunicación Digital Efectiva",
+            "Periodismo Deportivo en los Medios Digitales",
+            "Taller de Desarrollo de Contenidos Multiplataforma",
+            "Fundamentos de Marketing",
+            "Administración de Empresas y Responsabilidad Social",
+            "Organización y Marketing de Eventos Deportivos",
+            "Gerencia de Proyectos Deportivos",
+            "Investigación Creativa y Exploración de Insights",
+            "Guion y Producción de Radio",
+            "Taller de Audiovisuales",
+            "Taller y Producción de Reportajes",
+            "Programas Televisivos Deportivos",
+            "Locución y Narración Deportiva",
+            "Historia del Deporte",
+            "Psicología en los Deportes",
+            "Técnicas y Tácticas del Fútbol",
+            "Fundamentos Polideportivos",
+            "Historia de los Juegos Olímpicos",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    marketingModa: {
+        area: "Área de Marketing",
+        nombre: "Marketing y Gestión de Moda",
+        cursos: [
+            "Fundamentos de Marketing",
+            "Matemática Aplicada",
+            "Comunicación Escrita",
+            "Branding y Gestión de Productos",
+            "Información Contable Financiera para los Negocios",
+            "Marketing de Servicios",
+            "Gestión de Compras para Retail",
+            "Análisis de Costos y Presupuestos",
+            "Marketing Estratégico",
+            "Retail Management",
+            "Estrategias de Distribución Comercial",
+            "Plan de Marketing",
+            "Visual Merchandising y Retail Design",
+            "Legislación Aplicada a los Negocios",
+            "Historia de la Moda",
+            "Fundamentos de Diseño y Patronaje",
+            "Fibras Textiles y Materiales",
+            "Desarrollo y Planificación de Colecciones",
+            "Branding de Moda y Fashion Styling",
+            "Moda Sostenible",
+            "Comercio Internacional para la Moda",
+            "Dirección y Gestión de Negocio de Moda",
+            "Análisis del Entorno de Negocios",
+            "Comportamiento del Consumidor y Sociología Comercial",
+            "Investigación Cuantitativa",
+            "Investigación Creativa y Exploración de Insights",
+            "Tendencias y Coolhunting",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Inteligencia Artificial Aplicada",
+            "Marketing Digital para la Moda",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    marketing: {
+        area: "Área de Marketing",
+        nombre: "Marketing",
+        cursos: [
+            "Fundamentos de Marketing",
+            "Matemática Aplicada",
+            "Comunicación Escrita",
+            "Branding y Gestión de Productos",
+            "Estrategias de Distribución Comercial",
+            "Marketing Relacional y CRM",
+            "Marketing de Servicios",
+            "Marketing Estratégico",
+            "Pricing Strategies",
+            "Plan de Medios Integrados",
+            "Retail Management",
+            "Plan de Marketing",
+            "Organización de Eventos",
+            "Inteligencia Artificial Aplicada",
+            "Comunicaciones Integradas para el Marketing",
+            "Comunicación Digital Efectiva",
+            "Diseño de Negocios Digitales",
+            "Transformación Digital",
+            "E-Commerce y Mobile Marketing",
+            "Estrategia de Medios Digitales y Social Media",
+            "English B1 - I",
+            "English B1 - II",
+            "Información Contable Financiera para los Negocios",
+            "Análisis de Costos y Presupuestos",
+            "Modelos de Negocios y Startups",
+            "Legislación Aplicada a los Negocios",
+            "Gestión del Talento en la Organización",
+            "Análisis de los Procesos Empresariales",
+            "Análisis del Entorno de Negocios",
+            "Comportamiento del Consumidor y Sociología Comercial",
+            "Investigación Cuantitativa",
+            "Investigación Creativa y Exploración de Insights",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    publicidadMediosDigitales: {
+        area: "Área de Marketing",
+        nombre: "Publicidad y Medios Digitales",
+        cursos: [
+            "Fundamentos y Casuística Publicitaria",
+            "Redacción Creativa",
+            "Dirección Gráfica Publicitaria",
+            "Producción Publicitaria",
+            "Producción y Realización Audiovisual Publicitaria",
+            "Proyecto de Campaña Integral",
+            "Comunicación Escrita",
+            "Semiótica Visual",
+            "Fundamentos Visuales",
+            "Tipografía",
+            "Fotografía",
+            "Fotografía Publicitaria",
+            "Construcción de Guion",
+            "Legislación Publicitaria",
+            "Fundamentos de Marketing",
+            "Estrategia y Gestión de Cuentas",
+            "Planeamiento Estratégico de Campañas",
+            "Proyecto de Branding",
+            "Gerencia de Agencias",
+            "Portafolio y Branding Personal",
+            "Diseño Digital y Creatividad con Inteligencia Artificial",
+            "Comunicación Digital Efectiva",
+            "Plan de Medios Integrados",
+            "Estrategia de Medios Digitales y Social Media",
+            "Inteligencia Artificial Aplicada",
+            "Creatividad Digital",
+            "Investigación Creativa y Exploración de Insights",
+            "Tendencias y Coolhunting",
+            "Análisis del Entorno de Negocios",
+            "Modelos de Negocios y Startups",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    gestionComercial: {
+        area: "Área de Marketing",
+        nombre: "Gestión Comercial",
+        cursos: [
+            "Introducción a la Gestión Comercial",
+            "Técnicas y Entrenamiento Comercial",
+            "Estrategias de Distribución Comercial",
+            "Pricing Strategies",
+            "Retail Management",
+            "Pronóstico y Presupuesto de Ventas",
+            "Administración de la Fuerza de Ventas",
+            "Supervisión y Evaluación de Equipos Comerciales",
+            "Coaching Ejecutivo",
+            "Planeamiento Comercial",
+            "Información Contable Financiera para los Negocios",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Gestión de Importaciones y Exportaciones",
+            "Gestión de la Cadena de Suministros",
+            "Gestión del Talento en la Organización",
+            "Logística Internacional",
+            "Legislación Aplicada a los Negocios",
+            "English B1 - I",
+            "English B1 - II",
+            "Fundamentos de Marketing",
+            "Matemática Aplicada",
+            "Análisis de Datos",
+            "Análisis del Entorno de Negocios",
+            "Investigación de Mercados Cuali-Cuanti",
+            "Comunicación Escrita",
+            "Trade Marketing and Category Management",
+            "Diseño de Negocios Digitales",
+            "Marketing Relacional y CRM",
+            "E-Commerce y Mobile Marketing",
+            "Inteligencia Artificial Aplicada",
+            "Comunicación Digital Efectiva",
+            "Modelos de Negocios y Startups",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    administracionEmpresas: {
+        area: "Área de Negocios",
+        nombre: "Administración de Empresas",
+        cursos: [
+            "Inteligencia Artificial Aplicada",
+            "Gestión del Talento en la Organización",
+            "Gestión de Compensaciones y Legislación Laboral",
+            "Legislación Aplicada a los Negocios",
+            "Modelos de Negocios y Startups",
+            "Toma de Decisiones Gerenciales",
+            "Comunicación Escrita",
+            "Análisis del Entorno de Negocios",
+            "Administración de Empresas y Responsabilidad Social",
+            "Formulación y Evaluación de Proyectos",
+            "Gestión de Proyectos",
+            "Planeamiento Estratégico",
+            "Fundamentos de Marketing",
+            "Diseño de Negocios Digitales",
+            "E-commerce y Mobile Marketing",
+            "Negocios Internacionales",
+            "Logística Internacional",
+            "Organización de Eventos",
+            "English B1 - I",
+            "English B1 - II",
+            "Gestión de la Cadena de Suministros",
+            "Gestión de Operaciones",
+            "Análisis de los Procesos Empresariales",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Gestión de Importaciones y Exportaciones",
+            "Información Contable Financiera para los Negocios",
+            "Matemática Aplicada",
+            "Análisis de Datos",
+            "Matemática Aplicada a las Finanzas",
+            "Análisis de Costos y Presupuestos",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Instrumentos Financieros para la Toma de Decisiones",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    negociosInternacionales: {
+        area: "Área de Negocios",
+        nombre: "Negocios Internacionales",
+        cursos: [
+            "Matemática Aplicada",
+            "Matemática Aplicada a las Finanzas",
+            "Análisis de Datos",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Análisis y Gestión Tributaria",
+            "Financiamiento de Negocios Internacionales",
+            "Información Contable Financiera para los Negocios",
+            "Gestión del Talento en la Organización",
+            "Administración de Empresas y Responsabilidad Social",
+            "Comunicación Escrita",
+            "Inteligencia Artificial Aplicada",
+            "Análisis del Entorno de Negocios",
+            "Formulación y Evaluación de Proyectos",
+            "Inteligencia de Negocios Internacionales",
+            "English B1 - I",
+            "English B1 - II",
+            "Negocios Internacionales",
+            "Gestión de Importaciones y Exportaciones",
+            "Legislación Peruana de Comercio Internacional",
+            "Derecho Comercial y Acuerdos Internacionales",
+            "Logística Internacional",
+            "Sistemas de Distribución Internacional",
+            "Cotizaciones Internacionales",
+            "Control de Riesgos del Comercio Exterior",
+            "Economía Internacional",
+            "Gestión de la Cadena de Suministros",
+            "Diseño de Negocios Digitales",
+            "Investigación de Mercados Globales",
+            "Marketing Internacional",
+            "Modelos de Negocios y Startups",
+            "Fundamentos de Marketing",
+            "Estrategias de Internacionalización",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Dirección de Personas"
+        ]
+    },
+
+    administracionFinanzas: {
+        area: "Área de Negocios",
+        nombre: "Administración y Finanzas",
+        cursos: [
+            "Herramientas Informáticas para las Finanzas",
+            "Análisis de Costos y Presupuestos",
+            "Análisis y Gestión Tributaria",
+            "Información Contable Financiera para los Negocios",
+            "Contabilidad Gerencial para la Toma de Decisiones",
+            "Matemática Aplicada",
+            "Análisis de Datos",
+            "Matemática Aplicada a las Finanzas",
+            "Comunicación Escrita",
+            "Administración de Empresas y Responsabilidad Social",
+            "Gestión de la Cadena de Suministros",
+            "Formulación y Evaluación de Proyectos",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Gestión de Proyectos",
+            "Planeamiento Estratégico",
+            "Inteligencia Artificial Aplicada",
+            "Modelos de Negocios y Startups",
+            "Gestión de Importaciones y Exportaciones",
+            "Diseño y Control de Indicadores",
+            "Control de Riesgos del Comercio Exterior",
+            "English B1 - I",
+            "English B1 - II",
+            "Fundamentos de Finanzas",
+            "Gestión de Capital de Trabajo",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Gestión del Riesgo",
+            "Planificación y Control Financiero",
+            "Mercado de Capitales",
+            "Banca y Finanzas Digitales",
+            "Gestión Financiera Bancaria",
+            "Valorización de Empresas",
+            "Gestión de Fuentes de Financiamiento de Largo Plazo",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    recursosHumanos: {
+        area: "Área de Negocios",
+        nombre: "Recursos Humanos",
+        cursos: [
+            "Administración de Empresas y Responsabilidad Social",
+            "Matemática Aplicada",
+            "Fundamentos de Marketing",
+            "Análisis del Entorno de Negocios",
+            "Información Contable Financiera para los Negocios",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Psicología Organizacional",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Análisis de los Procesos Empresariales",
+            "Análisis de Datos",
+            "Gestión del Talento en la Organización",
+            "Incorporación del Talento",
+            "Retención y Sucesión del Talento",
+            "Cultura, Clima y Comunicación Corporativa",
+            "Legislación Laboral y Negociación Colectiva",
+            "Compensaciones, Beneficios y Bienestar",
+            "Valorización de Cargos y Diseño de Estructura Salarial",
+            "Gestión del Cambio Organizacional",
+            "Dirección Estratégica del Talento",
+            "Comunicación Escrita",
+            "Mercado Laboral y Empleabilidad",
+            "Desarrollo del Individuo en la Organización",
+            "Indicadores en Recursos Humanos",
+            "Modelo de Gestión por Competencias",
+            "Herramientas Digitales en Recursos Humanos",
+            "Modelos de Negocios y Startups",
+            "Inteligencia Artificial Aplicada",
+            "Management del Conocimiento",
+            "Investigación Creativa y Exploración de Insights",
+            "Diseño de Negocios Digitales",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Dirección de Personas",
+            "Competencias Intrapersonales",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    administracionBancaria: {
+        area: "Área de Negocios",
+        nombre: "Administración Bancaria",
+        cursos: [
+            "Administración de Empresas y Responsabilidad Social",
+            "Fundamentos de Marketing",
+            "Planeamiento Estratégico",
+            "Análisis del Entorno de Negocios",
+            "Información Contable Financiera para los Negocios",
+            "Gestión del Talento en la Organización",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Comunicación Escrita",
+            "Operaciones de Caja",
+            "Productos Financieros",
+            "Técnicas y Entrenamiento Comercial",
+            "Servicio al Cliente Financiero",
+            "Legislación Bancaria",
+            "Gestión Comercial de Agencias",
+            "Administración de Agencias",
+            "Fundamentos de la Administración Bancaria y Financiera",
+            "Banca Empresarial",
+            "Banca Personal",
+            "Inteligencia Artificial Aplicada",
+            "Banca y Finanzas Digitales",
+            "Banca para Pymes y Mypes",
+            "Banca de Inversión",
+            "Gestión de Capital de Trabajo",
+            "Gestión del Riesgo",
+            "Planificación y Control Financiero",
+            "Diseño y Control de Indicadores",
+            "Matemática Aplicada",
+            "Herramientas Informáticas para las Finanzas",
+            "Análisis de Datos",
+            "Matemática Aplicada a las Finanzas",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    logistica: {
+        area: "Área de Negocios",
+        nombre: "Logística",
+        cursos: [
+            "Administración de Empresas y Responsabilidad Social",
+            "Matemática Aplicada",
+            "Comunicación Escrita",
+            "Análisis de Datos",
+            "Información Contable Financiera para los Negocios",
+            "Fundamentos de Marketing",
+            "Planeamiento Estratégico",
+            "Gestión de Compensaciones y Legislación Laboral",
+            "Gestión de Proyectos",
+            "Fundamentos de Logística",
+            "Gestión de Compras",
+            "Calidad y Seguridad en Abastecimiento",
+            "Envases, Empaques y Embalajes",
+            "Innovación en Logística",
+            "Técnicas de Almacenamiento",
+            "Gestión de Importaciones y Exportaciones",
+            "English B1 - I",
+            "English B1 - II",
+            "Gestión de la Cadena de Suministros",
+            "Logística Interna",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Gestión Estratégica de Inventarios",
+            "Sistemas de Información Logística",
+            "Gestión de Operaciones",
+            "Logística Externa",
+            "Logística en E-Commerce",
+            "Logística Inversa",
+            "Gestión de Transportes",
+            "Investigación de Mercados Globales",
+            "Inteligencia Artificial Aplicada",
+            "E-Commerce y Mobile Marketing",
+            "Logística Internacional",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Desarrollo de Resiliencia",
+            "Competencias Intrapersonales"
+        ]
+    },
+
+    contabilidad: {
+        area: "Área de Negocios",
+        nombre: "Contabilidad",
+        cursos: [
+            "Fundamentos de Contabilidad",
+            "Gestión de Planillas",
+            "Contabilidad de Inventarios",
+            "Documentación Comercial y Contable",
+            "Análisis y Gestión Tributaria",
+            "Información Contable Financiera para los Negocios",
+            "Contabilidad Gerencial para la Toma de Decisiones",
+            "Gestión de Tesorería",
+            "Sistemas de Información Contable",
+            "Normas Contables Internacionales",
+            "Auditoría Financiera y Tributaria",
+            "Tributación Aplicada",
+            "Administración de Empresas y Responsabilidad Social",
+            "Comunicación Escrita",
+            "Matemática Aplicada",
+            "Formulación y Evaluación de Proyectos",
+            "Inteligencia Artificial Aplicada",
+            "English B1 - I",
+            "English B1 - II",
+            "Gestión de Capital de Trabajo",
+            "Planificación y Control Financiero",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Matemática Aplicada a las Finanzas",
+            "Herramientas Informáticas para las Finanzas",
+            "Gestión Estratégica de Costos",
+            "Gestión Financiera Bancaria",
+            "Análisis de Costos y Presupuestos",
+            "Valorización de Empresas",
+            "Gestión del Riesgo",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    gestionDeportiva: {
+        area: "Área de Negocios",
+        nombre: "Gestión Deportiva",
+        cursos: [
+            "Historia del Deporte",
+            "Fundamentos Polideportivos",
+            "Introducción a los Negocios del Deporte",
+            "Ciencias del Deporte",
+            "Infraestructura y Espacios Deportivos",
+            "Gerencia de Proyectos Deportivos",
+            "Gestión de Instituciones Deportivas",
+            "Inteligencia Artificial Aplicada",
+            "eSports y Tecnologías en el Deporte",
+            "Regulación Deportiva",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Competencias Intrapersonales",
+            "Dirección de Personas",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "English B1 - I",
+            "English B1 - II",
+            "Matemática Aplicada",
+            "Análisis del Entorno de Negocios",
+            "Diseño y Control de Indicadores",
+            "Gestión del Talento en la Organización",
+            "Información Contable Financiera para los Negocios",
+            "Gestión de Proyectos",
+            "Análisis de los Procesos Empresariales",
+            "Gestión y Creación de Empresas",
+            "Análisis Financiero para la Toma de Decisiones",
+            "Administración de Empresas y Responsabilidad Social",
+            "Comunicación Externa",
+            "Organización y Marketing de Eventos Deportivos",
+            "Fundamentos de Marketing",
+            "Patrocinios y Representación Deportiva",
+            "Estrategia de Medios Digitales y Social Media",
+            "Comunicación Escrita",
+            "Gestión Comercial en Entidades Deportivas"
+        ]
+    },
+
+    gestionPublica: {
+        area: "Área de Negocios",
+        nombre: "Gestión Pública",
+        cursos: [
+            "Introducción a la Gestión Pública",
+            "Legislación y Derecho Administrativo Constitucional",
+            "Diseño Organizacional del Estado",
+            "Gestión de Políticas Públicas",
+            "Análisis del Entorno de Negocios",
+            "Gestión de Recursos Humanos en el Sector Público",
+            "Planeamiento Estratégico en la Gestión Pública",
+            "Comunicación Escrita",
+            "Diseño y Control de Indicadores",
+            "Gestión de Contrataciones del Estado (SEACE)",
+            "Toma de Decisiones Gerenciales",
+            "Matemática Aplicada",
+            "Economía del Sector Público",
+            "Fundamentos de Contabilidad",
+            "Presupuesto y Finanzas Públicas (SIGA y SIAF)",
+            "Análisis de Datos",
+            "Gestión de Tesorería del Estado",
+            "Gestión de la Contabilidad Pública",
+            "Control Gubernamental",
+            "Inversión Pública",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Gestión Ambiental y Sostenibilidad del Estado",
+            "Inteligencia Artificial Aplicada",
+            "Modernización de la Gestión Pública",
+            "Transformación Digital en la Gestión Pública",
+            "Descentralización del Estado",
+            "Investigación Cuantitativa",
+            "Dirección de Personas",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Competencias Intrapersonales",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    seguridadSaludTrabajo: {
+        area: "Área de Negocios",
+        nombre: "Procesos en Seguridad y Salud en el Trabajo",
+        cursos: [
+            "Administración de Empresas y Responsabilidad Social",
+            "Análisis de los Procesos Empresariales",
+            "Análisis del Entorno de Negocios",
+            "Matemática Aplicada",
+            "Comunicación Escrita",
+            "Gestión de Proyectos",
+            "Inteligencia Artificial Aplicada",
+            "Fundamentos en Seguridad y Salud en el Trabajo",
+            "Gestión en Salud Ocupacional",
+            "Introducción a la Legislación en Seguridad y Salud en el Trabajo",
+            "Legislación en Seguridad y Salud en el Trabajo en Entornos Industriales",
+            "Gestión de Estándares Internacionales",
+            "Gestión de Riesgos de Seguridad y Salud Ocupacional",
+            "Gestión Ambiental en las Organizaciones",
+            "Seguridad Basada en el Comportamiento",
+            "Inspecciones, Fiscalización y Supervisión de SST",
+            "English B1 - I",
+            "English B1 - II",
+            "Elaboración de Planes y Programas de SST",
+            "Identificación de Peligros y Evaluación de Riesgos",
+            "Monitoreo de Agentes Físicos y Químicos",
+            "Gestión de Emergencias en el Trabajo",
+            "Psicología e Investigación Cualitativa",
+            "Monitoreo de Agentes Biológicos y Psicosociales",
+            "Higiene Ocupacional",
+            "Ergonomía",
+            "Comunicación Efectiva y Técnicas de Capacitación",
+            "Trabajo de Alto Riesgo",
+            "Metodologías de Investigación de Incidentes y Accidentes",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Competencias Intrapersonales",
+            "Dirección de Personas",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III"
+        ]
+    },
+
+    administracionIndustrial: {
+        area: "Área de Negocios",
+        nombre: "Administración Industrial",
+        cursos: [
+            "Matemática Aplicada",
+            "Fundamentos de Marketing",
+            "Análisis del Entorno de Negocios",
+            "Análisis de Datos",
+            "Análisis de Costos y Presupuestos",
+            "Instrumentos Financieros para la Toma de Decisiones",
+            "Cálculo para Ciencias e Ingeniería",
+            "Diseño y Control de Indicadores",
+            "Legislación Aplicada a los Negocios",
+            "Formulación y Evaluación de Proyectos",
+            "Planeamiento Estratégico",
+            "Introducción a la Gestión Industrial",
+            "Dibujo Técnico para Ingeniería",
+            "Fundamentos en Seguridad y Salud en el Trabajo",
+            "Gestión de la Cadena de Suministros",
+            "Auditoría y Evaluación de Riesgos en Ingeniería",
+            "Máquinas y Sistemas Industriales",
+            "Procesos Industriales",
+            "Gestión de la Calidad 4.0",
+            "Planificación y Control de Operaciones",
+            "Mantenimiento Industrial",
+            "Investigación Operativa",
+            "Tecnología Industrial",
+            "Fundamentos de Big Data",
+            "Inteligencia Artificial Aplicada",
+            "Gestión de Información Industrial",
+            "Business Intelligence",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Comunicación Escrita",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "English B1 - I",
+            "English B1 - II"
+        ]
+    },
+
+    desarrolloSistemas: {
+        area: "Área de Tecnología",
+        nombre: "Desarrollo de Sistemas de Información",
+        cursos: [
+            "Diseño y Desarrollo Web",
+            "Programación Web Básica",
+            "Programación Web Avanzada",
+            "Desarrollo de Aplicaciones Básico",
+            "Desarrollo de Aplicaciones Avanzado",
+            "Desarrollo de Aplicaciones Empresariales Básico",
+            "Desarrollo de Aplicaciones Empresariales Avanzado",
+            "Integración de Aplicaciones",
+            "Proyecto Tecnológico",
+            "Análisis del Entorno de Negocios",
+            "Análisis y Diseño de Sistemas Básico",
+            "Análisis y Diseño de Sistemas Avanzado",
+            "Diseño y Programación de Base de Datos",
+            "Programación Avanzada de Base de Datos",
+            "Calidad y Pruebas de Software",
+            "Analítica de Sistemas Empresariales",
+            "English B1 - I",
+            "English B1 - II",
+            "Aplicaciones Móviles para Android",
+            "Aplicaciones Móviles para iPhone",
+            "Soluciones Basadas en Internet de las Cosas",
+            "Gestión de Dispositivos Tecnológicos",
+            "Desarrollo de Soluciones Cloud Básico",
+            "Seguridad y Continuidad de Sistemas",
+            "Inteligencia Artificial Aplicada",
+            "Introducción a la Programación",
+            "Matemática Aplicada",
+            "Cálculo para Ciencias e Ingeniería",
+            "Programación Orientada a Objetos",
+            "Algoritmo y Estructura de Datos Basados en Inteligencia Artificial",
+            "Comunicación Escrita",
+            "Gestión de Proyectos",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas"
+        ]
+    },
+
+    redesComunicaciones: {
+        area: "Área de Tecnología",
+        nombre: "Redes y Comunicaciones",
+        cursos: [
+            "Gestión de Dispositivos Tecnológicos",
+            "CCNA I - Introduction to Networks",
+            "CCNA II - Switching, Routing y Wireless Essentials",
+            "CCNA III - Enterprise Networking, Security and Automation",
+            "CCNA IV - Advanced Routing",
+            "Servidores y Almacenamiento",
+            "Virtualización de Infraestructuras Tecnológicas",
+            "Diseño de Infraestructura de Redes",
+            "Centro de Datos Cloud",
+            "Administración de Windows",
+            "Administración Avanzada de Windows",
+            "Administración de Base de Datos",
+            "Administración de Linux",
+            "Administración Avanzada de Linux",
+            "Diseño y Programación de Base de Datos",
+            "Gestión de Servicios - ITIL",
+            "Introducción a la Programación",
+            "Proyecto Tecnológico",
+            "Soluciones Basadas en Internet de las Cosas",
+            "English B1 - I",
+            "English B1 - II",
+            "Administración de Empresas y Responsabilidad Social",
+            "Análisis del Entorno de Negocios",
+            "Gestión de Proyectos",
+            "Servicios de Voz, Video y Wireless",
+            "Seguridad en Sistemas Operativos",
+            "CCNA Security",
+            "Técnicas de Hacking y Análisis Forense",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Matemática Aplicada",
+            "Análisis de Datos",
+            "Cálculo para Ciencias e Ingeniería",
+            "Inteligencia Artificial Aplicada"
+        ]
+    },
+
+    serviciosTecnologicos: {
+        area: "Área de Tecnología",
+        nombre: "Servicios Tecnológicos de Información",
+        cursos: [
+            "Calidad y Pruebas de Software",
+            "Desarrollo de Aplicaciones Empresariales Avanzado",
+            "Desarrollo de Aplicaciones Empresariales Básico",
+            "Desarrollo de Soluciones Cloud Básico",
+            "Diseño y Desarrollo Web",
+            "Introducción a la Programación",
+            "Programación Orientada a Objetos",
+            "Programación Web Básica",
+            "Administración de Empresas y Responsabilidad Social",
+            "Análisis del Entorno de Negocios",
+            "Análisis Funcional",
+            "Gestión de la Cadena de Suministros",
+            "Gestión de Procesos, Simulación y Mejora Continua",
+            "Gestión de Proyectos",
+            "Gestión de Servicios - ITIL",
+            "Modelos de Negocios y Startups",
+            "Proyecto Tecnológico",
+            "Sistemas de Control y Gobierno de TI",
+            "English B1 - I",
+            "English B1 - II",
+            "CCNA I - Introduction to Networks",
+            "Gestión de Dispositivos Tecnológicos",
+            "Seguridad y Continuidad de Sistemas",
+            "Algoritmo y Estructura de Datos Basados en Inteligencia Artificial",
+            "Cálculo para Ciencias e Ingeniería",
+            "Inteligencia Artificial Aplicada",
+            "Matemática Aplicada",
+            "Análisis y Diseño de Sistemas Avanzado",
+            "Análisis y Diseño de Sistemas Básico",
+            "Analítica de Sistemas Empresariales",
+            "Diseño y Programación de Base de Datos",
+            "Programación Avanzada de Base de Datos",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional"
+        ]
+    },
+
+    ciberseguridad: {
+        area: "Área de Tecnología",
+        nombre: "Ciberseguridad",
+        cursos: [
+            "Análisis de Amenazas y Riesgos",
+            "Auditoría de Ciberseguridad",
+            "CCNA Security",
+            "Compliance IT",
+            "Criptografía",
+            "Estándares y Normativas de Ciberseguridad",
+            "Fundamentos de Ciberseguridad",
+            "Investigación de Incidentes",
+            "Seguridad en Aplicaciones y Bases de Datos",
+            "Seguridad en la Nube",
+            "Seguridad en Sistemas Operativos",
+            "Técnicas de Hacking y Análisis Forense",
+            "CCNA I - Introduction to Networks",
+            "CCNA II - Switching, Routing y Wireless Essentials",
+            "CCNA III - Enterprise Networking, Security and Automation",
+            "Gestión de Dispositivos Tecnológicos",
+            "Servidores y Almacenamiento",
+            "English B1 - I",
+            "English B1 - II",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "Análisis del Entorno de Negocios",
+            "Cálculo para Ciencias e Ingeniería",
+            "Inteligencia Artificial Aplicada",
+            "Matemática Aplicada",
+            "Proyecto Tecnológico",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional",
+            "Administración Avanzada de Linux",
+            "Administración Avanzada de Windows",
+            "Administración de Linux",
+            "Administración de Windows",
+            "Introducción a la Programación"
+        ]
+    },
+
+    computacionNube: {
+        area: "Área de Tecnología",
+        nombre: "Computación en la Nube",
+        cursos: [
+            "Auditoría de Ciberseguridad",
+            "Compliance IT",
+            "Investigación de Incidentes",
+            "Seguridad en la Nube",
+            "Administración de Infraestructura Cloud",
+            "Análisis y Monitoreo Cloud",
+            "Arquitectura de Cloud Computing",
+            "Automatización y Gestión de Configuración Cloud",
+            "Calidad y Pruebas de Software",
+            "Centro de Datos Cloud",
+            "Desarrollo de Soluciones Cloud Avanzado",
+            "Desarrollo de Soluciones Cloud Básico",
+            "Fundamentos de Cloud Computing",
+            "Introducción a Plataformas Cloud",
+            "Proyecto Tecnológico",
+            "Sistemas de Control y Gobierno de TI",
+            "Análisis del Entorno de Negocios",
+            "Gestión de Proyectos",
+            "Gestión de Servicios - ITIL",
+            "English B1 - I",
+            "English B1 - II",
+            "Análisis Funcional",
+            "Diseño y Programación de Base de Datos",
+            "Gestión de Dispositivos Tecnológicos",
+            "Integración de Aplicaciones",
+            "Introducción a la Programación",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "Cálculo para Ciencias e Ingeniería",
+            "Inteligencia Artificial Aplicada",
+            "Matemática Aplicada",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional"
+        ]
+    },
+
+    arquitecturaDatos: {
+        area: "Área de Tecnología",
+        nombre: "Arquitectura de Datos",
+        cursos: [
+            "Matemática Aplicada",
+            "Cálculo para Ciencias e Ingeniería",
+            "Inteligencia Artificial Aplicada",
+            "Análisis de Datos",
+            "Gestión de Dispositivos Tecnológicos",
+            "Administración de Base de Datos",
+            "Análisis de Rendimiento y Escalabilidad",
+            "Automatización de Procesos de Negocios",
+            "Compliance IT",
+            "Diseño y Programación de Base de Datos",
+            "Programación Avanzada de Base de Datos",
+            "Seguridad en la Nube",
+            "Transferencia Optimizada de Datos",
+            "Introducción a la Programación",
+            "Introducción al Modelado de Datos",
+            "Fundamentos de Big Data",
+            "Modelado de Procesos de Negocios",
+            "Analítica de Sistemas Empresariales",
+            "English B1 - I",
+            "English B1 - II",
+            "Análisis del Entorno de Negocios",
+            "Proyecto Tecnológico",
+            "Gestión de Proyectos",
+            "Gestión de Servicios - ITIL",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "Fundamentos de Arquitectura de Datos",
+            "Tendencias en Arquitectura de Datos",
+            "Algoritmo y Estructura de Datos Basados en Inteligencia Artificial",
+            "Data Lakes and Data Warehousing",
+            "Sistemas de Control y Gobierno de TI",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas"
+        ]
+    },
+
+    cienciaDatos: {
+        area: "Área de Tecnología",
+        nombre: "Ciencia de Datos",
+        cursos: [
+            "Análisis del Entorno de Negocios",
+            "Cálculo para Ciencias e Ingeniería",
+            "Estadística Avanzada",
+            "Matemática Aplicada",
+            "Optimización y Modelado Matemático",
+            "Analítica de Sistemas Empresariales",
+            "Big Data Analytics",
+            "Data Mining Avanzado",
+            "Data Mining Básico",
+            "Fundamentos de Big Data",
+            "Fundamentos de Ciencia de Datos",
+            "Introducción a la Estadística y Análisis de Datos",
+            "Storytelling con Datos",
+            "Algoritmo y Estructura de Datos Basados en Inteligencia Artificial",
+            "Diseño y Programación de Base de Datos",
+            "Introducción al Modelado de Datos",
+            "Programación Avanzada de Base de Datos",
+            "English B1 - I",
+            "English B1 - II",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "Gestión de Dispositivos Tecnológicos",
+            "Introducción a la Programación",
+            "Proyecto Tecnológico",
+            "Transformación Digital",
+            "Aprendizaje por Refuerzo",
+            "Deep Learning y Lenguaje Natural",
+            "Fundamentos de Machine Learning",
+            "Inteligencia Artificial Aplicada",
+            "Sistemas Distribuidos",
+            "Visión Computacional",
+            "Competencias Intrapersonales",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Ética Profesional"
+        ]
+    },
+
+    hoteleriaRestaurantes: {
+        area: "Área de Servicios",
+        nombre: "Hotelería y Restaurantes",
+        cursos: [
+            "Gestión de Servicios",
+            "Gestión de Recepción y Reservas",
+            "Planificación de Establecimientos y Diseño de Ambientes",
+            "Gestión de Costos en los Servicios",
+            "Revenue & Rate Management",
+            "Introducción a la Industria de la Hospitalidad y Turismo",
+            "Marketing Digital Turístico y Hotelero",
+            "Legislación para la Industria de la Hospitalidad y Turismo",
+            "Innovación para Hoteles y Restaurantes",
+            "Diseño y Gestión de Experiencias en Empresas de Servicios",
+            "Organización de Eventos",
+            "Estrategias y Captación de Turismo de Reuniones",
+            "Medio Ambiente y Diversidad Cultural",
+            "Gestión de Destinos Turísticos y Negocios de Entretenimiento",
+            "Nuevas Formas de Hospedaje - Airbnb y Otros Métodos Alternativos",
+            "Proyecto de Gestión de Experiencias en Empresas de Servicios",
+            "English B1 - I",
+            "English B1 - II",
+            "Insumos del Perú y del Mundo",
+            "Taller de Técnicas de Servicios de A&B",
+            "Pastelería y Panadería Básica",
+            "Técnicas Gastronómicas Básicas",
+            "Enología y Maridaje",
+            "Ingeniería del Menú y Nutrición",
+            "Matemática Aplicada",
+            "Información Contable Financiera para los Negocios",
+            "Administración de Empresas y Responsabilidad Social",
+            "Fundamentos de Marketing",
+            "Comportamiento del Consumidor en un Entorno Digital",
+            "Marketing Relacional y CRM",
+            "Comunicación Escrita",
+            "Inteligencia Artificial Aplicada",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Dirección de Personas",
+            "Desarrollo de Resiliencia"
+        ]
+    },
+
+    turismo: {
+        area: "Área de Servicios",
+        nombre: "Turismo",
+        cursos: [
+            "Introducción a la Industria de la Hospitalidad y Turismo",
+            "Calidad y Seguridad en los Servicios Turísticos",
+            "Operaciones de Empresas de Servicios Turísticos y Reuniones",
+            "Taller de Investigación Turística",
+            "Gestión de Recepción y Reservas",
+            "Legislación para la Industria de la Hospitalidad y Turismo",
+            "Gestión de Destinos Turísticos y Negocios de Entretenimiento",
+            "Historia y Geografía Turística del Perú",
+            "Identidad y Patrimonio Cultural",
+            "Medio Ambiente y Diversidad Cultural",
+            "Historia del Arte y Folklore Peruano",
+            "Taller de Museología",
+            "Circuitos Turísticos",
+            "Matemática Aplicada",
+            "Información Contable Financiera para los Negocios",
+            "Administración de Empresas y Responsabilidad Social",
+            "Análisis de los Procesos Empresariales",
+            "Revenue & Rate Management",
+            "English B1 - I",
+            "English B1 - II",
+            "Estadística Aplicada al Turismo",
+            "Comportamiento del Consumidor en un Entorno Digital",
+            "Inteligencia Artificial Aplicada",
+            "Marketing Digital Turístico y Hotelero",
+            "Sistemas para la Gestión de Servicios Turísticos",
+            "Etiqueta, Protocolo e Imagen Personal",
+            "Estrategias y Captación de Turismo de Reuniones",
+            "Industria de Reuniones",
+            "Gestión de Turismo de Reuniones",
+            "Producto Turístico",
+            "Diseño y Gestión de Experiencias en Empresas de Servicios",
+            "Proyecto de Gestión de Experiencias en Empresas de Servicios",
+            "Ética Profesional",
+            "Desarrollo de Resiliencia",
+            "Dirección de Personas",
+            "Competencias Intrapersonales"
+        ]
+    },
+
+    gastronomia: {
+        area: "Área de Servicios",
+        nombre: "Gastronomía",
+        cursos: [
+            "Insumos del Perú y del Mundo",
+            "Técnicas Gastronómicas Básicas",
+            "Cocina Peruana Tradicional",
+            "Pastelería y Panadería Básica",
+            "Cocina Peruana Regional",
+            "Técnicas Gastronómicas Avanzadas",
+            "Cocina Europea y Mediterránea",
+            "Pastelería y Panadería Avanzada",
+            "Comunicación Escrita",
+            "Análisis del Entorno de Negocios",
+            "Inteligencia Artificial Aplicada",
+            "Gestión de Costos en los Servicios",
+            "Gestión y Creación de Empresas",
+            "Cafetería, Heladería y Nuevas Tendencias",
+            "Enología y Maridaje",
+            "Taller de Bar y Coctelería",
+            "Fundamentos de Marketing",
+            "English B1 - I",
+            "English B1 - II",
+            "EFSRT I",
+            "EFSRT II",
+            "EFSRT III",
+            "Técnicas de Comedor y Servicio al Cliente",
+            "Organización de Eventos",
+            "Gestión de Compras",
+            "Cocina de América y Asia",
+            "Normativa Gastronómica",
+            "Dietética y Nutrición",
+            "Diseño, Equipamiento y Seguridad",
+            "Ingeniería del Menú y Nutrición",
+            "Comida Saludable",
+            "Competencias Intrapersonales",
+            "Ética Profesional",
+            "Resolución de Conflictos",
+            "Dirección de Personas"
+        ]
+    }
+}
+
+
+let modoActual = ""
+let areaActual = ""
+
+
 // Crear opciones para notas de 0 a 20 con decimales
 function opcionesNotas(){
     let opciones, i, valor
@@ -27,26 +1495,426 @@ function opcionesCreditos(){
 }
 
 
-let modoActual = ""
+// Genera las opciones de cursos según la carrera seleccionada en orden alfabético
+function opcionesCursos(){
+    let carrera, cursos, opciones, i
+
+    carrera = document.getElementById("carreraSeleccionada").value
+
+    if(carrera == ""){
+        return `<option value="">Primero seleccione su carrera</option>`
+    }
+
+    cursos = carrerasISIL[carrera].cursos.slice()
+
+    cursos.sort(function(a, b){
+        return a.localeCompare(b, "es", { sensitivity: "base" })
+    })
+
+    if(cursos.length == 0){
+        return `<option value="">Cursos pendientes de cargar para esta carrera</option>`
+    }
+
+    opciones = `<option value="">Seleccione curso</option>`
+
+    for(i = 0; i < cursos.length; i++){
+        opciones = opciones + `<option value="${cursos[i]}">${cursos[i]}</option>`
+    }
+
+    return opciones
+}
 
 
-// Seleccionar opción principal
-function seleccionarModo(modo){
-    modoActual = modo
+// Limpia los formularios cuando cambia la carrera o el área
+function cambiarCarrera(){
+    modoActual = ""
 
-    document.getElementById("resultado").innerHTML = ""
     document.getElementById("zonaCursos").innerHTML = ""
     document.getElementById("zonaCursoUnico").innerHTML = ""
+    document.getElementById("resultado").innerHTML = ""
 
     document.getElementById("panelPonderado").classList.add("d-none")
     document.getElementById("panelCurso").classList.add("d-none")
     document.getElementById("accionesPonderado").classList.add("d-none")
     document.getElementById("accionesCurso").classList.add("d-none")
 
+    ocultarBotonVolverOpciones()
+}
+
+
+// Muestra u oculta las carreras debajo del área seleccionada
+function seleccionarArea(area, boton){
+    let botonesArea, botonesCarrera, carreras, contenido, i
+    let contenedorCarreras, collapseCarreras
+
+    contenedorCarreras = document.getElementById("contenedorCarreras")
+
+    collapseCarreras = bootstrap.Collapse.getOrCreateInstance(contenedorCarreras, {
+        toggle: false
+    })
+
+    if(areaActual == area && contenedorCarreras.classList.contains("show")){
+        collapseCarreras.hide()
+
+        areaActual = ""
+
+        document.getElementById("areaSeleccionada").value = ""
+        document.getElementById("carreraSeleccionada").value = ""
+        document.getElementById("carreraTexto").classList.add("d-none")
+        document.getElementById("opciones").classList.add("d-none")
+        document.getElementById("btnSiguienteCarrera").disabled = true
+
+        botonesArea = document.querySelectorAll(".area-card-btn")
+        botonesCarrera = document.querySelectorAll(".carrera-btn")
+
+        botonesArea.forEach(function(item){
+            item.classList.remove("active")
+        })
+
+        botonesCarrera.forEach(function(item){
+            item.classList.remove("active")
+        })
+
+        cambiarCarrera()
+        return
+    }
+
+    areaActual = area
+
+    document.getElementById("areaSeleccionada").value = area
+    document.getElementById("carreraSeleccionada").value = ""
+    document.getElementById("carreraTexto").classList.add("d-none")
+    document.getElementById("opciones").classList.add("d-none")
+    document.getElementById("btnSiguienteCarrera").disabled = true
+
+    cambiarCarrera()
+
+    botonesArea = document.querySelectorAll(".area-card-btn")
+
+    botonesArea.forEach(function(item){
+        item.classList.remove("active")
+    })
+
+    boton.classList.add("active")
+
+    carreras = obtenerCarrerasPorArea(area).slice()
+
+    carreras.sort(function(a, b){
+        return a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" })
+    })
+
+    contenido = ""
+
+    for(i = 0; i < carreras.length; i++){
+        contenido = contenido + `
+            <div class="col col-sm-12 col-md-6 col-lg-4">
+                <button type="button" class="btn btn-outline-light w-100 carrera-btn" onclick="seleccionarCarrera('${carreras[i].codigo}', this)">
+                    ${carreras[i].nombre}
+                </button>
+            </div>
+        `
+    }
+
+    document.getElementById("tituloAreaSeleccionada").innerHTML = carreras[0].area
+    document.getElementById("listaCarreras").innerHTML = contenido
+
+    collapseCarreras.show()
+}
+
+
+// Carreras por área
+function obtenerCarrerasPorArea(area){
+    let carreras
+
+    carreras = {
+        diseno: [
+            {codigo: "disenoUXUI", nombre: "Diseño de Medios Interactivos (UX/UI)", area: "Área de Diseño"},
+            {codigo: "disenoGrafico", nombre: "Diseño Gráfico", area: "Área de Diseño"},
+            {codigo: "disenoInteriores", nombre: "Diseño de Interiores", area: "Área de Diseño"},
+            {codigo: "animacionDigital3D", nombre: "Animación Digital y Diseño 3D", area: "Área de Diseño"},
+            {codigo: "videojuegos", nombre: "Diseño y Desarrollo de Videojuegos", area: "Área de Diseño"}
+        ],
+
+        comunicacion: [
+            {codigo: "fotografiaProduccionImagen", nombre: "Fotografía y Producción de Imagen", area: "Área de Comunicación"},
+            {codigo: "comunicacionAudiovisual", nombre: "Comunicación Audiovisual", area: "Área de Comunicación"},
+            {codigo: "comunicacionIntegral", nombre: "Comunicación Integral", area: "Área de Comunicación"},
+            {codigo: "periodismoDeportivo", nombre: "Periodismo Deportivo", area: "Área de Comunicación"}
+        ],
+
+        marketing: [
+            {codigo: "marketingModa", nombre: "Marketing y Gestión de Moda", area: "Área de Marketing"},
+            {codigo: "marketing", nombre: "Marketing", area: "Área de Marketing"},
+            {codigo: "publicidadMediosDigitales", nombre: "Publicidad y Medios Digitales", area: "Área de Marketing"},
+            {codigo: "gestionComercial", nombre: "Gestión Comercial", area: "Área de Marketing"}
+        ],
+
+        negocios: [
+            {codigo: "administracionEmpresas", nombre: "Administración de Empresas", area: "Área de Negocios"},
+            {codigo: "negociosInternacionales", nombre: "Negocios Internacionales", area: "Área de Negocios"},
+            {codigo: "administracionFinanzas", nombre: "Administración y Finanzas", area: "Área de Negocios"},
+            {codigo: "recursosHumanos", nombre: "Recursos Humanos", area: "Área de Negocios"},
+            {codigo: "administracionBancaria", nombre: "Administración Bancaria", area: "Área de Negocios"},
+            {codigo: "logistica", nombre: "Logística", area: "Área de Negocios"},
+            {codigo: "contabilidad", nombre: "Contabilidad", area: "Área de Negocios"},
+            {codigo: "gestionDeportiva", nombre: "Gestión Deportiva", area: "Área de Negocios"},
+            {codigo: "gestionPublica", nombre: "Gestión Pública", area: "Área de Negocios"},
+            {codigo: "seguridadSaludTrabajo", nombre: "Procesos en Seguridad y Salud en el Trabajo", area: "Área de Negocios"},
+            {codigo: "administracionIndustrial", nombre: "Administración Industrial", area: "Área de Negocios"}
+        ],
+
+        tecnologia: [
+            {codigo: "desarrolloSistemas", nombre: "Desarrollo de Sistemas de Información", area: "Área de Tecnología"},
+            {codigo: "redesComunicaciones", nombre: "Redes y Comunicaciones", area: "Área de Tecnología"},
+            {codigo: "serviciosTecnologicos", nombre: "Servicios Tecnológicos de Información", area: "Área de Tecnología"},
+            {codigo: "ciberseguridad", nombre: "Ciberseguridad", area: "Área de Tecnología"},
+            {codigo: "computacionNube", nombre: "Computación en la Nube", area: "Área de Tecnología"},
+            {codigo: "arquitecturaDatos", nombre: "Arquitectura de Datos", area: "Área de Tecnología"},
+            {codigo: "cienciaDatos", nombre: "Ciencia de Datos", area: "Área de Tecnología"}
+        ],
+
+        servicios: [
+            {codigo: "hoteleriaRestaurantes", nombre: "Hotelería y Restaurantes", area: "Área de Servicios"},
+            {codigo: "turismo", nombre: "Turismo", area: "Área de Servicios"},
+            {codigo: "gastronomia", nombre: "Gastronomía", area: "Área de Servicios"}
+        ]
+    }
+
+    return carreras[area]
+}
+
+
+// Seleccionar carrera
+function seleccionarCarrera(carrera, boton){
+    let botonesCarrera
+
+    document.getElementById("carreraSeleccionada").value = carrera
+    document.getElementById("opciones").classList.add("d-none")
+
+    cambiarCarrera()
+
+    botonesCarrera = document.querySelectorAll(".carrera-btn")
+
+    botonesCarrera.forEach(function(item){
+        item.classList.remove("active")
+    })
+
+    boton.classList.add("active")
+
+    document.getElementById("btnSiguienteCarrera").disabled = false
+
+    document.getElementById("carreraTexto").classList.remove("d-none")
+    document.getElementById("carreraTexto").innerHTML = `
+        Carrera seleccionada: ${carrerasISIL[carrera].nombre}
+    `
+}
+
+
+// Botón siguiente
+function continuarCarrera(){
+    let carrera
+
+    carrera = document.getElementById("carreraSeleccionada").value
+
+    if(carrera == ""){
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Primero seleccione una carrera.
+            </div>
+        `
+        return
+    }
+
+    document.getElementById("resultado").innerHTML = ""
+
+    document.getElementById("seleccionCarrera").classList.add("d-none")
+    document.getElementById("opciones").classList.remove("d-none")
+
+    agregarBarraCarreraActiva()
+
+    document.getElementById("opciones").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
+}
+
+
+// Barra superior cuando ya se eligió carrera
+function agregarBarraCarreraActiva(){
+    let carrera, opciones
+
+    carrera = document.getElementById("carreraSeleccionada").value
+    opciones = document.getElementById("opciones")
+
+    if(document.getElementById("barraCarreraActiva") != null){
+        document.getElementById("barraCarreraActiva").remove()
+    }
+
+    opciones.insertAdjacentHTML("afterbegin", `
+        <div id="barraCarreraActiva" class="alert alert-light d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <div class="fw-bold">
+                <i class="bi bi-mortarboard-fill"></i>
+                Carrera seleccionada: ${carrerasISIL[carrera].nombre}
+            </div>
+
+            <button class="btn btn-outline-primary btn-sm fw-bold" onclick="volverSeleccionCarrera()">
+                <i class="bi bi-arrow-left-circle-fill"></i>
+                Cambiar carrera
+            </button>
+        </div>
+    `)
+}
+
+
+// Volver a la selección de carrera
+function volverSeleccionCarrera(){
+    let botonesArea, botonesCarrera
+    let contenedorCarreras, collapseCarreras
+
+    document.getElementById("seleccionCarrera").classList.remove("d-none")
+    document.getElementById("opciones").classList.add("d-none")
+
+    document.getElementById("areaSeleccionada").value = ""
+    document.getElementById("carreraSeleccionada").value = ""
+    document.getElementById("carreraTexto").classList.add("d-none")
+    document.getElementById("btnSiguienteCarrera").disabled = true
+
+    botonesArea = document.querySelectorAll(".area-card-btn")
+    botonesCarrera = document.querySelectorAll(".carrera-btn")
+
+    botonesArea.forEach(function(item){
+        item.classList.remove("active")
+    })
+
+    botonesCarrera.forEach(function(item){
+        item.classList.remove("active")
+    })
+
+    contenedorCarreras = document.getElementById("contenedorCarreras")
+    collapseCarreras = bootstrap.Collapse.getOrCreateInstance(contenedorCarreras, {
+        toggle: false
+    })
+
+    collapseCarreras.hide()
+
+    areaActual = ""
+
+    if(document.getElementById("barraCarreraActiva") != null){
+        document.getElementById("barraCarreraActiva").remove()
+    }
+
+    cambiarCarrera()
+
+    document.getElementById("seleccionCarrera").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
+}
+
+
+function mostrarBotonVolverOpciones(){
+    if(document.getElementById("botonVolverOpciones") != null){
+        document.getElementById("botonVolverOpciones").classList.remove("d-none")
+        return
+    }
+
+    document.getElementById("panelPonderado").insertAdjacentHTML("beforebegin", `
+        <div id="botonVolverOpciones" class="acciones mt-4 mb-4">
+            <div class="row g-3 justify-content-center">
+                <div class="col col-sm-12 col-md-6 col-lg-4">
+                    <button class="btn btn-outline-light w-100 fw-bold" onclick="volverOpciones()">
+                        <i class="bi bi-arrow-left-circle-fill"></i>
+                        Escoger otra opción
+                    </button>
+                </div>
+            </div>
+        </div>
+    `)
+}
+
+
+// Ocultar botón volver opciones
+function ocultarBotonVolverOpciones(){
+    if(document.getElementById("botonVolverOpciones") != null){
+        document.getElementById("botonVolverOpciones").classList.add("d-none")
+    }
+}
+
+
+// Volver a las 2 opciones de promedio, sin cambiar carrera
+function volverOpciones(){
+    modoActual = ""
+
+    document.getElementById("zonaCursos").innerHTML = ""
+    document.getElementById("zonaCursoUnico").innerHTML = ""
+    document.getElementById("resultado").innerHTML = ""
+
+    document.getElementById("panelPonderado").classList.add("d-none")
+    document.getElementById("panelCurso").classList.add("d-none")
+    document.getElementById("accionesPonderado").classList.add("d-none")
+    document.getElementById("accionesCurso").classList.add("d-none")
+
+    ocultarBotonVolverOpciones()
+
+    document.getElementById("opciones").classList.remove("d-none")
+
+    document.getElementById("opciones").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
+}
+
+
+// Valida que el estudiante seleccione carrera antes de usar las opciones
+function validarCarreraSeleccionada(){
+    let carrera
+
+    carrera = document.getElementById("carreraSeleccionada").value
+
+    if(carrera == ""){
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Primero seleccione su carrera.
+            </div>
+        `
+        return false
+    }
+
+    return true
+}
+
+
+function seleccionarModo(modo){
+    modoActual = modo
+
+    if(validarCarreraSeleccionada() == false){
+        return
+    }
+
+    document.getElementById("resultado").innerHTML = ""
+    document.getElementById("zonaCursos").innerHTML = ""
+    document.getElementById("zonaCursoUnico").innerHTML = ""
+
+    document.getElementById("opciones").classList.add("d-none")
+    document.getElementById("panelPonderado").classList.add("d-none")
+    document.getElementById("panelCurso").classList.add("d-none")
+    document.getElementById("accionesPonderado").classList.add("d-none")
+    document.getElementById("accionesCurso").classList.add("d-none")
+
+    mostrarBotonVolverOpciones()
+
     if(modoActual == "ponderado"){
         document.getElementById("panelPonderado").classList.remove("d-none")
         document.getElementById("accionesPonderado").classList.remove("d-none")
         document.getElementById("cantidadCursos").value = ""
+
+        document.getElementById("panelPonderado").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+
         document.getElementById("cantidadCursos").focus()
     }
 
@@ -54,7 +1922,13 @@ function seleccionarModo(modo){
         document.getElementById("panelCurso").classList.remove("d-none")
         document.getElementById("accionesCurso").classList.remove("d-none")
         document.getElementById("cantidadCursos").value = ""
+
         generarCursoUnico()
+
+        document.getElementById("panelCurso").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
     }
 }
 
@@ -84,7 +1958,6 @@ function calcularNota5Minima(n1, n2, n3, n4){
 
     sumaPrimerasNotas = (n1 * 0.15) + (n2 * 0.15) + (n3 * 0.15) + (n4 * 0.15)
 
-    // Para aprobar en ISIL se necesita llegar a 12.5 sin redondear
     notaNecesaria = (12.5 - sumaPrimerasNotas) / 0.40
 
     notaNecesaria = Math.ceil(notaNecesaria * 100) / 100
@@ -120,8 +1993,10 @@ function generarCursoUnico(){
                         </h3>
 
                         <div class="mb-3">
-                            <label class="form-label">Nombre del curso</label>
-                            <input type="text" id="cursoUnico" class="form-control" placeholder="Ejemplo: Matemática">
+                            <label class="form-label">Curso</label>
+                            <select id="cursoUnico" class="form-select">
+                                ${opcionesCursos()}
+                            </select>
                         </div>
 
                         <div class="row g-3">
@@ -220,8 +2095,10 @@ function generarCursos(){
                         </h3>
 
                         <div class="mb-3">
-                            <label class="form-label">Nombre del curso</label>
-                            <input type="text" id="curso${i}" class="form-control" placeholder="Ejemplo: Matemática">
+                            <label class="form-label">Curso</label>
+                            <select id="curso${i}" class="form-select">
+                                ${opcionesCursos()}
+                            </select>
                         </div>
 
                         <div class="mb-3">
@@ -300,7 +2177,13 @@ function calcularCursoUnico(){
     n5 = parseFloat(document.getElementById("u_n5").value)
 
     if(nombreCurso == ""){
-        nombreCurso = "Curso seleccionado"
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Seleccione el curso.
+            </div>
+        `
+        return
     }
 
     if(isNaN(n1) || isNaN(n2) || isNaN(n3) || isNaN(n4)){
@@ -579,11 +2462,16 @@ function calcularPromedio(){
     for(i = 1; i <= cantidad; i++){
         datosFaltantes = []
 
+        nombreCurso = document.getElementById("curso" + i).value
         creditos = parseInt(document.getElementById("creditos" + i).value)
         n1 = parseFloat(document.getElementById("n1_" + i).value)
         n2 = parseFloat(document.getElementById("n2_" + i).value)
         n3 = parseFloat(document.getElementById("n3_" + i).value)
         n4 = parseFloat(document.getElementById("n4_" + i).value)
+
+        if(nombreCurso == ""){
+            datosFaltantes.push("Curso")
+        }
 
         if(isNaN(creditos)){
             datosFaltantes.push("Créditos")
@@ -648,10 +2536,6 @@ function calcularPromedio(){
         n3 = parseFloat(document.getElementById("n3_" + i).value)
         n4 = parseFloat(document.getElementById("n4_" + i).value)
         n5 = parseFloat(document.getElementById("n5_" + i).value)
-
-        if(nombreCurso == ""){
-            nombreCurso = "Curso " + i
-        }
 
         nota5Minima = calcularNota5Minima(n1, n2, n3, n4)
 
@@ -794,17 +2678,25 @@ function calcularPromedio(){
 }
 
 
-// Limpiar todo
+// Limpiar datos del cálculo y volver a las opciones
 function limpiar(){
-    modoActual = ""
+    let campos, i
 
-    document.getElementById("cantidadCursos").value = ""
-    document.getElementById("zonaCursos").innerHTML = ""
-    document.getElementById("zonaCursoUnico").innerHTML = ""
     document.getElementById("resultado").innerHTML = ""
 
-    document.getElementById("panelPonderado").classList.add("d-none")
-    document.getElementById("panelCurso").classList.add("d-none")
-    document.getElementById("accionesPonderado").classList.add("d-none")
-    document.getElementById("accionesCurso").classList.add("d-none")
+    if(modoActual == "ponderado"){
+        campos = document.querySelectorAll("#zonaCursos input, #zonaCursos select")
+
+        for(i = 0; i < campos.length; i++){
+            campos[i].value = ""
+        }
+    }
+
+    if(modoActual == "curso"){
+        campos = document.querySelectorAll("#zonaCursoUnico input, #zonaCursoUnico select")
+
+        for(i = 0; i < campos.length; i++){
+            campos[i].value = ""
+        }
+    }
 }
