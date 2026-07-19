@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio Ponderado de Cursos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/5271438.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="seccion-principal">
+        <section class="container">
+            <div class="row justify-content-center">
+                <div class="col col-sm-12 col-md-11 col-lg-10">
+                    <div class="card calculadora-card">
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <span class="etiqueta">
+                                    <i class="bi bi-mortarboard-fill"></i>
+                                    Calculadora Académica
+                                </span>
+                                <h1>Promedio Ponderado</h1>
+                                <p class="subtitulo">
+                                    Selecciona una opción para calcular el promedio de todos tus cursos o el promedio de un solo curso.
+                                </p>
+                            </div>
+                            <section id="opciones" class="mb-4">
+                                <div class="row g-4 justify-content-center">
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+                                        <div class="card opcion-card h-100" onclick="seleccionarModo('ponderado')">
+
+                                            <div class="card-body text-center">
+
+                                                <i class="bi bi-journals icono-opcion"></i>
+
+                                                <h3>Opción 1</h3>
+
+                                                <p>
+                                                    Quiero ver el promedio ponderado de todos mis cursos.
+                                                </p>
+
+                                                <button class="btn btn-primary w-100">
+                                                    Elegir opción
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <div class="card opcion-card h-100" onclick="seleccionarModo('curso')">
+
+                                            <div class="card-body text-center">
+
+                                                <i class="bi bi-journal-check icono-opcion"></i>
+
+                                                <h3>Opción 2</h3>
+
+                                                <p>
+                                                    Solo quiero ver mi promedio de un curso.
+                                                </p>
+
+                                                <button class="btn btn-success w-100">
+                                                    Elegir opción
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <section id="panelPonderado" class="panel-control d-none">
+
+                                <div class="titulo-panel">
+                                    <h2>
+                                        <i class="bi bi-calculator-fill"></i>
+                                        Promedio ponderado de todos los cursos
+                                    </h2>
+
+                                    <p>
+                                        Ingresa la cantidad de cursos, sus créditos y sus notas.
+                                    </p>
+                                </div>
+
+                                <div class="row g-3 align-items-end justify-content-center">
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <label for="cantidadCursos" class="form-label">
+                                            Cantidad de cursos
+                                        </label>
+
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-journal-bookmark-fill"></i>
+                                            </span>
+
+                                            <input type="number" id="cantidadCursos" class="form-control" min="2" placeholder="Mínimo: 2 cursos" onchange="validarCantidadPonderado()">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <button class="btn btn-primary w-100" onclick="generarCursos()">
+                                            <i class="bi bi-plus-circle-fill"></i>
+                                            Generar cursos
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <section id="panelCurso" class="panel-control d-none">
+
+                                <div class="titulo-panel">
+                                    <h2>
+                                        <i class="bi bi-journal-check"></i>
+                                        Promedio de un solo curso
+                                    </h2>
+
+                                    <p>
+                                        Ingresa las notas del curso para calcular su promedio final.
+                                    </p>
+                                </div>
+
+                                <div id="zonaCursoUnico"></div>
+
+                            </section>
+
+                            <div id="zonaCursos" class="row g-4 mt-4"></div>
+
+                            <div id="accionesPonderado" class="acciones mt-5 d-none">
+
+                                <div class="row g-3 justify-content-center">
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+                                        <button class="btn btn-success w-100" onclick="calcularPromedio()">
+                                            <i class="bi bi-calculator-fill"></i>
+                                            Calcular ponderado
+                                        </button>
+                                    </div>
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+                                        <button class="btn btn-secondary w-100" onclick="limpiar()">
+                                            <i class="bi bi-trash3-fill"></i>
+                                            Limpiar
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="accionesCurso" class="acciones mt-5 d-none">
+
+                                <div class="row g-3 justify-content-center">
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+                                        <button class="btn btn-success w-100" onclick="calcularCursoUnico()">
+                                            <i class="bi bi-calculator-fill"></i>
+                                            Calcular curso
+                                        </button>
+                                    </div>
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+                                        <button class="btn btn-secondary w-100" onclick="limpiar()">
+                                            <i class="bi bi-trash3-fill"></i>
+                                            Limpiar
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="resultado" class="resultado mt-4"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
