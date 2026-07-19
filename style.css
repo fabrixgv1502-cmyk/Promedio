@@ -491,3 +491,79 @@ h1{
 .mini-simulacion strong{
     color: inherit !important;
 }
+
+.area-card-btn{
+    min-height: 92px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ffffff, #e0f2fe);
+    color: #0f172a;
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 16px 35px rgba(15,23,42,0.24);
+    font-weight: 900;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.area-card-btn i{
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.area-card-btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 22px 42px rgba(15,23,42,0.32);
+}
+
+.area-card-btn.active{
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border-color: #60a5fa;
+}
+
+.area-card-btn.active i{
+    color: white;
+}
+
+.carreras-panel{
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.titulo-carreras{
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.carrera-btn{
+    min-height: 62px;
+    border-radius: 16px;
+    font-weight: 800;
+    white-space: normal;
+    transition: all 0.25s ease;
+}
+
+.carrera-btn:hover{
+    transform: translateY(-3px);
+}
+
+.carrera-btn.active{
+    background: #16a34a !important;
+    border-color: #16a34a !important;
+    color: white !important;
+    box-shadow: 0 14px 32px rgba(22,163,74,0.35);
+}
+
+#btnSiguienteCarrera:disabled{
+    opacity: 0.55;
+    cursor: not-allowed;
+}
