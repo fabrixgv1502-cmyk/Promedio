@@ -1460,8 +1460,6 @@ let carrerasISIL = {
         ]
     }
 }
-
-
 let modoActual = ""
 let areaActual = ""
 
@@ -1674,9 +1672,9 @@ function obtenerCarrerasPorArea(area){
         ],
 
         servicios: [
+            {codigo: "gastronomia", nombre: "Gastronomía", area: "Área de Servicios"},
             {codigo: "hoteleriaRestaurantes", nombre: "Hotelería y Restaurantes", area: "Área de Servicios"},
-            {codigo: "turismo", nombre: "Turismo", area: "Área de Servicios"},
-            {codigo: "gastronomia", nombre: "Gastronomía", area: "Área de Servicios"}
+            {codigo: "turismo", nombre: "Turismo", area: "Área de Servicios"}
         ]
     }
 
@@ -1813,6 +1811,7 @@ function volverSeleccionCarrera(){
 }
 
 
+// Botón para volver a escoger tipo de promedio
 function mostrarBotonVolverOpciones(){
     if(document.getElementById("botonVolverOpciones") != null){
         document.getElementById("botonVolverOpciones").classList.remove("d-none")
@@ -1886,6 +1885,7 @@ function validarCarreraSeleccionada(){
 }
 
 
+// Seleccionar opción principal
 function seleccionarModo(modo){
     modoActual = modo
 
@@ -1906,17 +1906,18 @@ function seleccionarModo(modo){
     mostrarBotonVolverOpciones()
 
     if(modoActual == "ponderado"){
-        document.getElementById("panelPonderado").classList.remove("d-none")
-        document.getElementById("accionesPonderado").classList.remove("d-none")
-        document.getElementById("cantidadCursos").value = ""
+    document.getElementById("panelPonderado").classList.remove("d-none")
+    document.getElementById("accionesPonderado").classList.add("d-none")
+    document.getElementById("cantidadCursos").value = ""
+    document.getElementById("zonaCursos").innerHTML = ""
 
-        document.getElementById("panelPonderado").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        })
+    document.getElementById("panelPonderado").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
 
-        document.getElementById("cantidadCursos").focus()
-    }
+    document.getElementById("cantidadCursos").focus()
+}
 
     if(modoActual == "curso"){
         document.getElementById("panelCurso").classList.remove("d-none")
@@ -1954,23 +1955,23 @@ function validarCantidadPonderado(){
 
 // Calcula la nota mínima necesaria en Nota 5 para aprobar con redondeo ISIL
 function calcularNota5Minima(n1, n2, n3, n4){
-    let sumaPrimerasNotas, notaNecesaria
+    let sumaPrimerasNotas, notaNecesaria, notaSelector
 
     sumaPrimerasNotas = (n1 * 0.15) + (n2 * 0.15) + (n3 * 0.15) + (n4 * 0.15)
 
     notaNecesaria = (12.5 - sumaPrimerasNotas) / 0.40
 
-    notaNecesaria = Math.ceil(notaNecesaria * 100) / 100
-
     if(notaNecesaria <= 0){
-        return "0.00"
+        return "0.0"
     }
 
     if(notaNecesaria > 20){
         return "No alcanza"
     }
 
-    return notaNecesaria.toFixed(2)
+    notaSelector = Math.ceil(notaNecesaria * 2) / 2
+
+    return notaSelector.toFixed(1)
 }
 
 
@@ -2071,15 +2072,16 @@ function generarCursos(){
     }
 
     if(isNaN(cantidad) || cantidad < 2){
-        document.getElementById("zonaCursos").innerHTML = ""
-        document.getElementById("resultado").innerHTML = `
-            <div class="alerta-personalizada">
-                <i class="bi bi-exclamation-triangle-fill"></i>
-                Para calcular el promedio ponderado debe ingresar mínimo 2 cursos.
-            </div>
-        `
-        return
-    }
+    document.getElementById("zonaCursos").innerHTML = ""
+    document.getElementById("accionesPonderado").classList.add("d-none")
+    document.getElementById("resultado").innerHTML = `
+        <div class="alerta-personalizada">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            Para calcular el promedio ponderado debe ingresar mínimo 2 cursos.
+        </div>
+    `
+    return
+}
 
     for(i = 1; i <= cantidad; i++){
         contenido = contenido + `
@@ -2155,8 +2157,9 @@ function generarCursos(){
         `
     }
 
-    document.getElementById("zonaCursos").innerHTML = contenido
-    document.getElementById("resultado").innerHTML = ""
+document.getElementById("zonaCursos").innerHTML = contenido
+document.getElementById("resultado").innerHTML = ""
+document.getElementById("accionesPonderado").classList.remove("d-none")
 }
 
 
@@ -2272,7 +2275,7 @@ function calcularCursoUnico(){
                 </div>
 
                 <p class="mt-4">
-                    Recuerda: ISIL redondea la nota final y se aprueba con 13.
+                    Recuerda: ISIL redondea la nota final del curso y se aprueba con 13.
                 </p>
             </div>
         `
@@ -2411,21 +2414,26 @@ function calcularPromedio(){
     let n1, n2, n3, n4, n5
     let promedioDecimal, promedioCurso
     let sumaCreditos, sumaPonderada
-    let promedioFinalDecimal, promedioFinal, estado
+    let creditosCalculados
+    let promedioFinalDecimal, estado
     let tabla
     let nota5Minima
+    let notaPorCreditos
     let cursosAprobados, cursosDesaprobados, creditosAprobados
     let cursosPendientes
     let datosFaltantes
+    let hayNota5Pendiente
 
     cantidad = parseInt(document.getElementById("cantidadCursos").value)
 
     sumaCreditos = 0
     sumaPonderada = 0
+    creditosCalculados = 0
     cursosAprobados = 0
     cursosDesaprobados = 0
     creditosAprobados = 0
     cursosPendientes = 0
+    hayNota5Pendiente = false
 
     if(cantidad == 1){
         seleccionarModo("curso")
@@ -2468,6 +2476,7 @@ function calcularPromedio(){
         n2 = parseFloat(document.getElementById("n2_" + i).value)
         n3 = parseFloat(document.getElementById("n3_" + i).value)
         n4 = parseFloat(document.getElementById("n4_" + i).value)
+        n5 = parseFloat(document.getElementById("n5_" + i).value)
 
         if(nombreCurso == ""){
             datosFaltantes.push("Curso")
@@ -2493,6 +2502,10 @@ function calcularPromedio(){
             datosFaltantes.push("Nota 4")
         }
 
+        if(isNaN(n5)){
+            hayNota5Pendiente = true
+        }
+
         if(datosFaltantes.length > 0){
             document.getElementById("resultado").innerHTML = `
                 <div class="alerta-personalizada">
@@ -2516,10 +2529,19 @@ function calcularPromedio(){
                     <tr>
                         <th>Curso</th>
                         <th>Créditos</th>
+    `
+
+    if(hayNota5Pendiente == true){
+        tabla = tabla + `
                         <th>Nota 5 mínima</th>
                         <th>Simular Nota 5</th>
+        `
+    }
+
+    tabla = tabla + `
                         <th>Promedio sin redondear</th>
-                        <th>Promedio ISIL</th>
+                        <th>Nota final</th>
+                        <th>Nota × Créditos</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
@@ -2548,6 +2570,10 @@ function calcularPromedio(){
                 <tr>
                     <td class="fw-bold">${nombreCurso}</td>
                     <td>${creditos}</td>
+            `
+
+            if(hayNota5Pendiente == true){
+                tabla = tabla + `
                     <td class="fw-bold text-danger">${nota5Minima}</td>
 
                     <td>
@@ -2563,7 +2589,11 @@ function calcularPromedio(){
 
                         <div id="resultadoSimulacionCurso${i}" class="mt-2"></div>
                     </td>
+                `
+            }
 
+            tabla = tabla + `
+                    <td>Pendiente</td>
                     <td>Pendiente</td>
                     <td>Pendiente</td>
                     <td>
@@ -2576,7 +2606,10 @@ function calcularPromedio(){
 
             promedioCurso = Math.round(promedioDecimal)
 
-            sumaPonderada = sumaPonderada + (promedioCurso * creditos)
+            notaPorCreditos = promedioCurso * creditos
+
+            sumaPonderada = sumaPonderada + notaPorCreditos
+            creditosCalculados = creditosCalculados + creditos
 
             if(promedioCurso >= 13){
                 estado = "<span class='badge text-bg-success'>Aprobado</span>"
@@ -2591,14 +2624,19 @@ function calcularPromedio(){
                 <tr>
                     <td class="fw-bold">${nombreCurso}</td>
                     <td>${creditos}</td>
-                    <td>
-                        <span class="badge text-bg-secondary">No aplica</span>
-                    </td>
-                    <td>
-                        <span class="badge text-bg-secondary">Nota 5 registrada</span>
-                    </td>
+            `
+
+            if(hayNota5Pendiente == true){
+                tabla = tabla + `
+                    <td><span class="celda-vacia">—</span></td>
+                    <td><span class="celda-vacia">—</span></td>
+                `
+            }
+
+            tabla = tabla + `
                     <td>${promedioDecimal.toFixed(2)}</td>
                     <td class="fw-bold">${promedioCurso}</td>
+                    <td class="fw-bold">${notaPorCreditos.toFixed(2)}</td>
                     <td>${estado}</td>
                 </tr>
             `
@@ -2612,26 +2650,96 @@ function calcularPromedio(){
     `
 
     if(cursosPendientes > 0){
-        tabla = tabla + `
-            <div class="promedio-final">
-                <i class="bi bi-hourglass-split"></i>
-                Promedio ponderado final pendiente
-                <br>
-                <small>
-                    Debe completar la Nota 5 de ${cursosPendientes} curso(s) para calcular el promedio final.
-                </small>
-            </div>
-        `
+
+        if(creditosCalculados > 0){
+            promedioFinalDecimal = sumaPonderada / creditosCalculados
+
+            tabla = tabla + `
+                <div class="resultado-ponderado">
+                    <h3>
+                        <i class="bi bi-hourglass-split"></i>
+                        Promedio ponderado parcial
+                    </h3>
+
+                    <div class="ponderado-numero">${promedioFinalDecimal.toFixed(2)}</div>
+
+                    <div class="detalle-ponderado">
+                        <div class="detalle-item">
+                            <span>Suma Nota × Créditos</span>
+                            <strong>${sumaPonderada.toFixed(2)}</strong>
+                        </div>
+
+                        <div class="detalle-item">
+                            <span>Créditos considerados</span>
+                            <strong>${creditosCalculados}</strong>
+                        </div>
+
+                        <div class="detalle-item">
+                            <span>Total de créditos</span>
+                            <strong>${sumaCreditos}</strong>
+                        </div>
+                    </div>
+
+                    <div class="formula-bonita">
+                        <strong>Fórmula:</strong>
+                        ${sumaPonderada.toFixed(2)} ÷ ${creditosCalculados} = ${promedioFinalDecimal.toFixed(2)}
+                        <br>
+                        Este promedio solo considera los cursos que ya tienen Nota 5 registrada.
+                    </div>
+                </div>
+            `
+        }else{
+            tabla = tabla + `
+                <div class="resultado-ponderado">
+                    <h3>
+                        <i class="bi bi-hourglass-split"></i>
+                        Promedio ponderado pendiente
+                    </h3>
+
+                    <div class="formula-bonita">
+                        Debe completar la Nota 5 de los cursos para calcular el promedio ponderado.
+                        <br>
+                        <strong>Fórmula:</strong> Σ(Nota final × Créditos) / ΣCréditos
+                    </div>
+                </div>
+            `
+        }
+
     }else{
         promedioFinalDecimal = sumaPonderada / sumaCreditos
-        promedioFinal = Math.round(promedioFinalDecimal)
 
         tabla = tabla + `
-            <div class="promedio-final">
-                <i class="bi bi-award-fill"></i>
-                Promedio ponderado final ISIL: ${promedioFinal}
-                <br>
-                <small>Promedio sin redondear: ${promedioFinalDecimal.toFixed(2)}</small>
+            <div class="resultado-ponderado">
+                <h3>
+                    <i class="bi bi-award-fill"></i>
+                    Promedio ponderado final ISIL
+                </h3>
+
+                <div class="ponderado-numero">${promedioFinalDecimal.toFixed(2)}</div>
+
+                <div class="detalle-ponderado">
+                    <div class="detalle-item">
+                        <span>Suma Nota × Créditos</span>
+                        <strong>${sumaPonderada.toFixed(2)}</strong>
+                    </div>
+
+                    <div class="detalle-item">
+                        <span>Suma de créditos</span>
+                        <strong>${sumaCreditos}</strong>
+                    </div>
+
+                    <div class="detalle-item">
+                        <span>Operación final</span>
+                        <strong>${promedioFinalDecimal.toFixed(2)}</strong>
+                    </div>
+                </div>
+
+                <div class="formula-bonita">
+                    <strong>Fórmula aplicada:</strong>
+                    Σ(Nota final × Créditos) / ΣCréditos
+                    <br>
+                    ${sumaPonderada.toFixed(2)} ÷ ${sumaCreditos} = ${promedioFinalDecimal.toFixed(2)}
+                </div>
             </div>
         `
     }
@@ -2678,7 +2786,7 @@ function calcularPromedio(){
 }
 
 
-// Limpiar datos del cálculo y volver a las opciones
+// Limpiar datos del cálculo actual, sin salir del formulario
 function limpiar(){
     let campos, i
 
