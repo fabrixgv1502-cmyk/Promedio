@@ -1906,18 +1906,18 @@ function seleccionarModo(modo){
     mostrarBotonVolverOpciones()
 
     if(modoActual == "ponderado"){
-    document.getElementById("panelPonderado").classList.remove("d-none")
-    document.getElementById("accionesPonderado").classList.add("d-none")
-    document.getElementById("cantidadCursos").value = ""
-    document.getElementById("zonaCursos").innerHTML = ""
+        document.getElementById("panelPonderado").classList.remove("d-none")
+        document.getElementById("accionesPonderado").classList.add("d-none")
+        document.getElementById("cantidadCursos").value = ""
+        document.getElementById("zonaCursos").innerHTML = ""
 
-    document.getElementById("panelPonderado").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    })
+        document.getElementById("panelPonderado").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
 
-    document.getElementById("cantidadCursos").focus()
-}
+        document.getElementById("cantidadCursos").focus()
+    }
 
     if(modoActual == "curso"){
         document.getElementById("panelCurso").classList.remove("d-none")
@@ -2072,16 +2072,16 @@ function generarCursos(){
     }
 
     if(isNaN(cantidad) || cantidad < 2){
-    document.getElementById("zonaCursos").innerHTML = ""
-    document.getElementById("accionesPonderado").classList.add("d-none")
-    document.getElementById("resultado").innerHTML = `
-        <div class="alerta-personalizada">
-            <i class="bi bi-exclamation-triangle-fill"></i>
-            Para calcular el promedio ponderado debe ingresar mínimo 2 cursos.
-        </div>
-    `
-    return
-}
+        document.getElementById("zonaCursos").innerHTML = ""
+        document.getElementById("accionesPonderado").classList.add("d-none")
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Para calcular el promedio ponderado debe ingresar mínimo 2 cursos.
+            </div>
+        `
+        return
+    }
 
     for(i = 1; i <= cantidad; i++){
         contenido = contenido + `
@@ -2157,9 +2157,9 @@ function generarCursos(){
         `
     }
 
-document.getElementById("zonaCursos").innerHTML = contenido
-document.getElementById("resultado").innerHTML = ""
-document.getElementById("accionesPonderado").classList.remove("d-none")
+    document.getElementById("zonaCursos").innerHTML = contenido
+    document.getElementById("resultado").innerHTML = ""
+    document.getElementById("accionesPonderado").classList.remove("d-none")
 }
 
 
@@ -2681,10 +2681,18 @@ function calcularPromedio(){
                     </div>
 
                     <div class="formula-bonita">
-                        <strong>Fórmula:</strong>
-                        ${sumaPonderada.toFixed(2)} ÷ ${creditosCalculados} = ${promedioFinalDecimal.toFixed(2)}
+
+                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img-final">
+
+                        <div class="operacion-formula">
+                            <strong>Operación parcial:</strong>
+                            ${sumaPonderada.toFixed(2)} ÷ ${creditosCalculados} = ${promedioFinalDecimal.toFixed(2)}
+                        </div>
+
                         <br>
+
                         Este promedio solo considera los cursos que ya tienen Nota 5 registrada.
+
                     </div>
                 </div>
             `
@@ -2697,9 +2705,13 @@ function calcularPromedio(){
                     </h3>
 
                     <div class="formula-bonita">
-                        Debe completar la Nota 5 de los cursos para calcular el promedio ponderado.
-                        <br>
-                        <strong>Fórmula:</strong> Σ(Nota final × Créditos) / ΣCréditos
+
+                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img-final">
+
+                        <div class="operacion-formula">
+                            Debe completar la Nota 5 de los cursos para calcular el promedio ponderado.
+                        </div>
+
                     </div>
                 </div>
             `
@@ -2735,10 +2747,14 @@ function calcularPromedio(){
                 </div>
 
                 <div class="formula-bonita">
-                    <strong>Fórmula aplicada:</strong>
-                    Σ(Nota final × Créditos) / ΣCréditos
-                    <br>
-                    ${sumaPonderada.toFixed(2)} ÷ ${sumaCreditos} = ${promedioFinalDecimal.toFixed(2)}
+
+                    <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img-final">
+
+                    <div class="operacion-formula">
+                        <strong>Operación aplicada:</strong>
+                        ${sumaPonderada.toFixed(2)} ÷ ${sumaCreditos} = ${promedioFinalDecimal.toFixed(2)}
+                    </div>
+
                 </div>
             </div>
         `
