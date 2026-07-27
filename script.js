@@ -1463,8 +1463,9 @@ let carrerasISIL = {
 let modoActual = ""
 let areaActual = ""
 
+let rutaFormulaPonderado = "Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png"
 
-// Crear opciones para notas de 0 a 20 con decimales
+
 function opcionesNotas(){
     let opciones, i, valor
 
@@ -1479,7 +1480,19 @@ function opcionesNotas(){
 }
 
 
-// Crear opciones para créditos de 3 a 10
+function opcionesNotasFinales(){
+    let opciones, i
+
+    opciones = `<option value="">Seleccione promedio final</option>`
+
+    for(i = 0; i <= 20; i++){
+        opciones = opciones + `<option value="${i}">${i}</option>`
+    }
+
+    return opciones
+}
+
+
 function opcionesCreditos(){
     let opciones, i
 
@@ -1493,7 +1506,6 @@ function opcionesCreditos(){
 }
 
 
-// Genera las opciones de cursos según la carrera seleccionada en orden alfabético
 function opcionesCursos(){
     let carrera, cursos, opciones, i
 
@@ -1523,24 +1535,26 @@ function opcionesCursos(){
 }
 
 
-// Limpia los formularios cuando cambia la carrera o el área
 function cambiarCarrera(){
     modoActual = ""
 
     document.getElementById("zonaCursos").innerHTML = ""
     document.getElementById("zonaCursoUnico").innerHTML = ""
+    document.getElementById("zonaCursosDirecto").innerHTML = ""
     document.getElementById("resultado").innerHTML = ""
 
     document.getElementById("panelPonderado").classList.add("d-none")
     document.getElementById("panelCurso").classList.add("d-none")
+    document.getElementById("panelDirecto").classList.add("d-none")
+
     document.getElementById("accionesPonderado").classList.add("d-none")
     document.getElementById("accionesCurso").classList.add("d-none")
+    document.getElementById("accionesDirecto").classList.add("d-none")
 
     ocultarBotonVolverOpciones()
 }
 
 
-// Muestra u oculta las carreras debajo del área seleccionada
 function seleccionarArea(area, boton){
     let botonesArea, botonesCarrera, carreras, contenido, i
     let contenedorCarreras, collapseCarreras
@@ -1620,7 +1634,6 @@ function seleccionarArea(area, boton){
 }
 
 
-// Carreras por área
 function obtenerCarrerasPorArea(area){
     let carreras
 
@@ -1682,7 +1695,6 @@ function obtenerCarrerasPorArea(area){
 }
 
 
-// Seleccionar carrera
 function seleccionarCarrera(carrera, boton){
     let botonesCarrera
 
@@ -1708,7 +1720,6 @@ function seleccionarCarrera(carrera, boton){
 }
 
 
-// Botón siguiente
 function continuarCarrera(){
     let carrera
 
@@ -1738,7 +1749,6 @@ function continuarCarrera(){
 }
 
 
-// Barra superior cuando ya se eligió carrera
 function agregarBarraCarreraActiva(){
     let carrera, opciones
 
@@ -1765,7 +1775,6 @@ function agregarBarraCarreraActiva(){
 }
 
 
-// Volver a la selección de carrera
 function volverSeleccionCarrera(){
     let botonesArea, botonesCarrera
     let contenedorCarreras, collapseCarreras
@@ -1811,7 +1820,6 @@ function volverSeleccionCarrera(){
 }
 
 
-// Botón para volver a escoger tipo de promedio
 function mostrarBotonVolverOpciones(){
     if(document.getElementById("botonVolverOpciones") != null){
         document.getElementById("botonVolverOpciones").classList.remove("d-none")
@@ -1833,7 +1841,6 @@ function mostrarBotonVolverOpciones(){
 }
 
 
-// Ocultar botón volver opciones
 function ocultarBotonVolverOpciones(){
     if(document.getElementById("botonVolverOpciones") != null){
         document.getElementById("botonVolverOpciones").classList.add("d-none")
@@ -1841,18 +1848,21 @@ function ocultarBotonVolverOpciones(){
 }
 
 
-// Volver a las 2 opciones de promedio, sin cambiar carrera
 function volverOpciones(){
     modoActual = ""
 
     document.getElementById("zonaCursos").innerHTML = ""
     document.getElementById("zonaCursoUnico").innerHTML = ""
+    document.getElementById("zonaCursosDirecto").innerHTML = ""
     document.getElementById("resultado").innerHTML = ""
 
     document.getElementById("panelPonderado").classList.add("d-none")
     document.getElementById("panelCurso").classList.add("d-none")
+    document.getElementById("panelDirecto").classList.add("d-none")
+
     document.getElementById("accionesPonderado").classList.add("d-none")
     document.getElementById("accionesCurso").classList.add("d-none")
+    document.getElementById("accionesDirecto").classList.add("d-none")
 
     ocultarBotonVolverOpciones()
 
@@ -1865,7 +1875,6 @@ function volverOpciones(){
 }
 
 
-// Valida que el estudiante seleccione carrera antes de usar las opciones
 function validarCarreraSeleccionada(){
     let carrera
 
@@ -1885,7 +1894,6 @@ function validarCarreraSeleccionada(){
 }
 
 
-// Seleccionar opción principal
 function seleccionarModo(modo){
     modoActual = modo
 
@@ -1896,12 +1904,17 @@ function seleccionarModo(modo){
     document.getElementById("resultado").innerHTML = ""
     document.getElementById("zonaCursos").innerHTML = ""
     document.getElementById("zonaCursoUnico").innerHTML = ""
+    document.getElementById("zonaCursosDirecto").innerHTML = ""
 
     document.getElementById("opciones").classList.add("d-none")
+
     document.getElementById("panelPonderado").classList.add("d-none")
     document.getElementById("panelCurso").classList.add("d-none")
+    document.getElementById("panelDirecto").classList.add("d-none")
+
     document.getElementById("accionesPonderado").classList.add("d-none")
     document.getElementById("accionesCurso").classList.add("d-none")
+    document.getElementById("accionesDirecto").classList.add("d-none")
 
     mostrarBotonVolverOpciones()
 
@@ -1909,7 +1922,6 @@ function seleccionarModo(modo){
         document.getElementById("panelPonderado").classList.remove("d-none")
         document.getElementById("accionesPonderado").classList.add("d-none")
         document.getElementById("cantidadCursos").value = ""
-        document.getElementById("zonaCursos").innerHTML = ""
 
         document.getElementById("panelPonderado").scrollIntoView({
             behavior: "smooth",
@@ -1931,10 +1943,23 @@ function seleccionarModo(modo){
             block: "start"
         })
     }
+
+    if(modoActual == "directo"){
+        document.getElementById("panelDirecto").classList.remove("d-none")
+        document.getElementById("accionesDirecto").classList.add("d-none")
+        document.getElementById("cantidadCursosDirecto").value = ""
+        document.getElementById("zonaCursosDirecto").innerHTML = ""
+
+        document.getElementById("panelDirecto").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+
+        document.getElementById("cantidadCursosDirecto").focus()
+    }
 }
 
 
-// Validar cantidad en opción ponderado
 function validarCantidadPonderado(){
     let cantidad
 
@@ -1953,7 +1978,6 @@ function validarCantidadPonderado(){
 }
 
 
-// Calcula la nota mínima necesaria en Nota 5 para aprobar con redondeo ISIL
 function calcularNota5Minima(n1, n2, n3, n4){
     let sumaPrimerasNotas, notaNecesaria, notaSelector
 
@@ -1975,7 +1999,6 @@ function calcularNota5Minima(n1, n2, n3, n4){
 }
 
 
-// Generar formulario para un solo curso
 function generarCursoUnico(){
     let contenido
 
@@ -2052,7 +2075,6 @@ function generarCursoUnico(){
 }
 
 
-// Generar varios cursos
 function generarCursos(){
     let cantidad, i, contenido
 
@@ -2163,7 +2185,72 @@ function generarCursos(){
 }
 
 
-// Calcular promedio de un solo curso
+function generarCursosDirecto(){
+    let cantidad, i, contenido
+
+    cantidad = parseInt(document.getElementById("cantidadCursosDirecto").value)
+    contenido = ""
+
+    if(isNaN(cantidad) || cantidad < 2){
+        document.getElementById("zonaCursosDirecto").innerHTML = ""
+        document.getElementById("accionesDirecto").classList.add("d-none")
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Para calcular el promedio ponderado debe ingresar mínimo 2 cursos.
+            </div>
+        `
+        return
+    }
+
+    for(i = 1; i <= cantidad; i++){
+        contenido = contenido + `
+            <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card curso-card">
+
+                    <div class="card-body">
+
+                        <h3 class="curso-titulo">
+                            <i class="bi bi-journal-text"></i>
+                            Curso ${i}
+                        </h3>
+
+                        <div class="mb-3">
+                            <label class="form-label">Curso</label>
+                            <select id="directoCurso${i}" class="form-select">
+                                ${opcionesCursos()}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Créditos</label>
+                            <select id="directoCreditos${i}" class="form-select">
+                                ${opcionesCreditos()}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Promedio final del curso</label>
+                            <select id="directoNota${i}" class="form-select">
+                                ${opcionesNotasFinales()}
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `
+    }
+
+    document.getElementById("zonaCursosDirecto").innerHTML = contenido
+    document.getElementById("resultado").innerHTML = ""
+    document.getElementById("accionesDirecto").classList.remove("d-none")
+}
+
+
 function calcularCursoUnico(){
     let nombreCurso, n1, n2, n3, n4, n5
     let promedioDecimal, promedioCurso, estado
@@ -2273,17 +2360,12 @@ function calcularCursoUnico(){
 
                     <div id="resultadoSimulacion" class="mt-3"></div>
                 </div>
-
-                <p class="mt-4">
-                    Recuerda: ISIL redondea la nota final del curso y se aprueba con 13.
-                </p>
             </div>
         `
         return
     }
 
     promedioDecimal = (n1 * 0.15) + (n2 * 0.15) + (n3 * 0.15) + (n4 * 0.15) + (n5 * 0.40)
-
     promedioCurso = Math.round(promedioDecimal)
 
     if(promedioCurso >= 13){
@@ -2305,17 +2387,12 @@ function calcularCursoUnico(){
 
             <p>Promedio sin redondear: ${promedioDecimal.toFixed(2)}</p>
 
-            <p>Promedio de notas ingresadas: <strong>${promedioNotasIngresadas.toFixed(2)}</strong></p>
-
-            <p>Nota 5 registrada: <strong>${n5}</strong></p>
-
             <p>Estado final: ${estado}</p>
         </div>
     `
 }
 
 
-// Evaluar una posible Nota 5 en la opción de un solo curso
 function evaluarNota5Simulada(){
     let n1, n2, n3, n4, nota5Simulada
     let promedioDecimal, promedioISIL, mensaje, claseEstado
@@ -2336,7 +2413,6 @@ function evaluarNota5Simulada(){
     }
 
     promedioDecimal = (n1 * 0.15) + (n2 * 0.15) + (n3 * 0.15) + (n4 * 0.15) + (nota5Simulada * 0.40)
-
     promedioISIL = Math.round(promedioDecimal)
 
     if(promedioISIL >= 13){
@@ -2361,7 +2437,6 @@ function evaluarNota5Simulada(){
 }
 
 
-// Evaluar una posible Nota 5 en la opción de varios cursos
 function evaluarNota5SimuladaCurso(numeroCurso){
     let n1, n2, n3, n4, nota5Simulada
     let promedioDecimal, promedioISIL, mensaje, claseEstado
@@ -2382,7 +2457,6 @@ function evaluarNota5SimuladaCurso(numeroCurso){
     }
 
     promedioDecimal = (n1 * 0.15) + (n2 * 0.15) + (n3 * 0.15) + (n4 * 0.15) + (nota5Simulada * 0.40)
-
     promedioISIL = Math.round(promedioDecimal)
 
     if(promedioISIL >= 13){
@@ -2407,7 +2481,6 @@ function evaluarNota5SimuladaCurso(numeroCurso){
 }
 
 
-// Calcular promedio ponderado de todos los cursos
 function calcularPromedio(){
     let cantidad, i
     let nombreCurso, creditos
@@ -2415,7 +2488,7 @@ function calcularPromedio(){
     let promedioDecimal, promedioCurso
     let sumaCreditos, sumaPonderada
     let creditosCalculados
-    let promedioFinalDecimal, estado
+    let promedioFinalDecimal, promedioFinalRedondeado, estado
     let tabla
     let nota5Minima
     let notaPorCreditos
@@ -2434,18 +2507,6 @@ function calcularPromedio(){
     creditosAprobados = 0
     cursosPendientes = 0
     hayNota5Pendiente = false
-
-    if(cantidad == 1){
-        seleccionarModo("curso")
-
-        document.getElementById("resultado").innerHTML = `
-            <div class="alerta-personalizada">
-                <i class="bi bi-info-circle-fill"></i>
-                Para calcular solo 1 curso se activó automáticamente la opción 2.
-            </div>
-        `
-        return
-    }
 
     if(isNaN(cantidad) || cantidad < 2){
         document.getElementById("resultado").innerHTML = `
@@ -2603,9 +2664,7 @@ function calcularPromedio(){
             `
         }else{
             promedioDecimal = (n1 * 0.15) + (n2 * 0.15) + (n3 * 0.15) + (n4 * 0.15) + (n5 * 0.40)
-
             promedioCurso = Math.round(promedioDecimal)
-
             notaPorCreditos = promedioCurso * creditos
 
             sumaPonderada = sumaPonderada + notaPorCreditos
@@ -2682,7 +2741,7 @@ function calcularPromedio(){
 
                     <div class="formula-bonita">
 
-                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img-final">
+                        <img src="${rutaFormulaPonderado}" alt="Fórmula del promedio ponderado" class="formula-img-final">
 
                         <div class="operacion-formula">
                             <strong>Operación parcial:</strong>
@@ -2706,7 +2765,7 @@ function calcularPromedio(){
 
                     <div class="formula-bonita">
 
-                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img-final">
+                        <img src="${rutaFormulaPonderado}" alt="Fórmula del promedio ponderado" class="formula-img-final">
 
                         <div class="operacion-formula">
                             Debe completar la Nota 5 de los cursos para calcular el promedio ponderado.
@@ -2719,6 +2778,7 @@ function calcularPromedio(){
 
     }else{
         promedioFinalDecimal = sumaPonderada / sumaCreditos
+        promedioFinalRedondeado = Math.round(promedioFinalDecimal)
 
         tabla = tabla + `
             <div class="resultado-ponderado">
@@ -2741,18 +2801,23 @@ function calcularPromedio(){
                     </div>
 
                     <div class="detalle-item">
-                        <span>Operación final</span>
-                        <strong>${promedioFinalDecimal.toFixed(2)}</strong>
+                        <span>Promedio redondeado</span>
+                        <strong>${promedioFinalRedondeado}</strong>
                     </div>
                 </div>
 
                 <div class="formula-bonita">
 
-                    <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img-final">
+                    <img src="${rutaFormulaPonderado}" alt="Fórmula del promedio ponderado" class="formula-img-final">
 
                     <div class="operacion-formula">
                         <strong>Operación aplicada:</strong>
                         ${sumaPonderada.toFixed(2)} ÷ ${sumaCreditos} = ${promedioFinalDecimal.toFixed(2)}
+                    </div>
+
+                    <div class="operacion-formula mt-2">
+                        <strong>Promedio redondeado:</strong>
+                        ${promedioFinalDecimal.toFixed(2)} → ${promedioFinalRedondeado}
                     </div>
 
                 </div>
@@ -2802,7 +2867,165 @@ function calcularPromedio(){
 }
 
 
-// Limpiar datos del cálculo actual, sin salir del formulario
+function calcularPonderadoDirecto(){
+    let cantidad, i
+    let curso, creditos, notaFinal
+    let sumaCreditos, sumaPonderada
+    let promedioFinalDecimal, promedioFinalRedondeado
+    let notaPorCreditos
+    let tabla
+    let datosFaltantes
+
+    cantidad = parseInt(document.getElementById("cantidadCursosDirecto").value)
+
+    sumaCreditos = 0
+    sumaPonderada = 0
+
+    if(isNaN(cantidad) || cantidad < 2){
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Para calcular el promedio ponderado debe ingresar mínimo 2 cursos.
+            </div>
+        `
+        return
+    }
+
+    if(document.getElementById("zonaCursosDirecto").innerHTML == ""){
+        document.getElementById("resultado").innerHTML = `
+            <div class="alerta-personalizada">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                Primero debe generar los cursos.
+            </div>
+        `
+        return
+    }
+
+    for(i = 1; i <= cantidad; i++){
+        datosFaltantes = []
+
+        curso = document.getElementById("directoCurso" + i).value
+        creditos = parseInt(document.getElementById("directoCreditos" + i).value)
+        notaFinal = parseFloat(document.getElementById("directoNota" + i).value)
+
+        if(curso == ""){
+            datosFaltantes.push("Curso")
+        }
+
+        if(isNaN(creditos)){
+            datosFaltantes.push("Créditos")
+        }
+
+        if(isNaN(notaFinal)){
+            datosFaltantes.push("Promedio final")
+        }
+
+        if(datosFaltantes.length > 0){
+            document.getElementById("resultado").innerHTML = `
+                <div class="alerta-personalizada">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    Complete los datos faltantes del curso ${i}: ${datosFaltantes.join(", ")}.
+                </div>
+            `
+            return
+        }
+    }
+
+    tabla = `
+        <h2>
+            <i class="bi bi-clipboard-data-fill"></i>
+            Promedio ponderado directo
+        </h2>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Créditos</th>
+                        <th>Promedio final</th>
+                        <th>Nota × Créditos</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+    `
+
+    for(i = 1; i <= cantidad; i++){
+        curso = document.getElementById("directoCurso" + i).value
+        creditos = parseInt(document.getElementById("directoCreditos" + i).value)
+        notaFinal = parseFloat(document.getElementById("directoNota" + i).value)
+
+        notaPorCreditos = notaFinal * creditos
+
+        sumaCreditos = sumaCreditos + creditos
+        sumaPonderada = sumaPonderada + notaPorCreditos
+
+        tabla = tabla + `
+            <tr>
+                <td class="fw-bold">${curso}</td>
+                <td>${creditos}</td>
+                <td class="fw-bold">${notaFinal}</td>
+                <td class="fw-bold">${notaPorCreditos.toFixed(2)}</td>
+            </tr>
+        `
+    }
+
+    promedioFinalDecimal = sumaPonderada / sumaCreditos
+    promedioFinalRedondeado = Math.round(promedioFinalDecimal)
+
+    tabla = tabla + `
+                </tbody>
+            </table>
+        </div>
+
+        <div class="resultado-ponderado">
+            <h3>
+                <i class="bi bi-award-fill"></i>
+                Promedio ponderado final ISIL
+            </h3>
+
+            <div class="ponderado-numero">${promedioFinalDecimal.toFixed(2)}</div>
+
+            <div class="detalle-ponderado">
+                <div class="detalle-item">
+                    <span>Suma Nota × Créditos</span>
+                    <strong>${sumaPonderada.toFixed(2)}</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Suma de créditos</span>
+                    <strong>${sumaCreditos}</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Promedio redondeado</span>
+                    <strong>${promedioFinalRedondeado}</strong>
+                </div>
+            </div>
+
+            <div class="formula-bonita">
+
+                <img src="${rutaFormulaPonderado}" alt="Fórmula del promedio ponderado" class="formula-img-final">
+
+                <div class="operacion-formula">
+                    <strong>Operación aplicada:</strong>
+                    ${sumaPonderada.toFixed(2)} ÷ ${sumaCreditos} = ${promedioFinalDecimal.toFixed(2)}
+                </div>
+
+                <div class="operacion-formula mt-2">
+                    <strong>Promedio redondeado:</strong>
+                    ${promedioFinalDecimal.toFixed(2)} → ${promedioFinalRedondeado}
+                </div>
+
+            </div>
+        </div>
+    `
+
+    document.getElementById("resultado").innerHTML = tabla
+}
+
+
 function limpiar(){
     let campos, i
 
@@ -2818,6 +3041,14 @@ function limpiar(){
 
     if(modoActual == "curso"){
         campos = document.querySelectorAll("#zonaCursoUnico input, #zonaCursoUnico select")
+
+        for(i = 0; i < campos.length; i++){
+            campos[i].value = ""
+        }
+    }
+
+    if(modoActual == "directo"){
+        campos = document.querySelectorAll("#zonaCursosDirecto input, #zonaCursosDirecto select")
 
         for(i = 0; i < campos.length; i++){
             campos[i].value = ""
