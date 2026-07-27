@@ -42,7 +42,7 @@
                                 <h1>Promedio</h1>
 
                                 <p class="subtitulo">
-                                    Primero selecciona tu carrera y luego elige si deseas calcular el promedio del ciclo o el promedio de un solo curso.
+                                    Primero selecciona tu carrera y luego elige cómo deseas calcular tu promedio académico.
                                 </p>
 
                             </div>
@@ -157,7 +157,7 @@
                                                 <h3>Opción 1</h3>
 
                                                 <p>
-                                                    Quiero calcular mi promedio ponderado del ciclo.
+                                                    Quiero calcular mi promedio ponderado desde mis notas.
                                                 </p>
 
                                                 <button class="btn btn-primary w-100">
@@ -194,6 +194,30 @@
 
                                     </div>
 
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <div class="card opcion-card h-100" onclick="seleccionarModo('directo')">
+
+                                            <div class="card-body text-center">
+
+                                                <i class="bi bi-clipboard2-data icono-opcion"></i>
+
+                                                <h3>Opción 3</h3>
+
+                                                <p>
+                                                    Ya tengo el promedio final de cada curso.
+                                                </p>
+
+                                                <button class="btn btn-warning w-100">
+                                                    Elegir opción
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
                             </section>
@@ -212,11 +236,14 @@
                                     </p>
 
                                     <div class="formula-ponderado">
+
                                         <div class="formula-titulo">
                                             <i class="bi bi-calculator-fill"></i>
                                             <span>Fórmula del promedio ponderado</span>
                                         </div>
+
                                         <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img">
+
                                         <p>
                                             Se multiplica la nota final de cada curso por sus créditos, se suman esos resultados y se divide entre la suma total de créditos.
                                         </p>
@@ -277,7 +304,72 @@
 
                             </section>
 
+                            <section id="panelDirecto" class="panel-control d-none">
+
+                                <div class="titulo-panel">
+
+                                    <h2>
+                                        <i class="bi bi-clipboard2-data-fill"></i>
+                                        Promedio ponderado directo
+                                    </h2>
+
+                                    <p>
+                                        Usa esta opción si ya tienes el promedio final de cada curso. Solo debes ingresar el curso, sus créditos y su nota final.
+                                    </p>
+
+                                    <div class="formula-ponderado">
+
+                                        <div class="formula-titulo">
+                                            <i class="bi bi-calculator-fill"></i>
+                                            <span>Fórmula del promedio ponderado</span>
+                                        </div>
+
+                                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img">
+
+                                        <p>
+                                            Se suma cada nota final multiplicada por sus créditos y luego se divide entre la suma total de créditos.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row g-3 align-items-end justify-content-center">
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <label for="cantidadCursosDirecto" class="form-label">
+                                            Cantidad de cursos
+                                        </label>
+
+                                        <div class="input-group">
+
+                                            <span class="input-group-text">
+                                                <i class="bi bi-journal-bookmark-fill"></i>
+                                            </span>
+
+                                            <input type="number" id="cantidadCursosDirecto" class="form-control" min="2" placeholder="Mínimo: 2 cursos">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <button class="btn btn-primary w-100" onclick="generarCursosDirecto()">
+                                            <i class="bi bi-plus-circle-fill"></i>
+                                            Generar cursos
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
                             <div id="zonaCursos" class="row g-4 mt-4"></div>
+
+                            <div id="zonaCursosDirecto" class="row g-4 mt-4"></div>
 
                             <div id="accionesPonderado" class="acciones mt-5 d-none">
 
@@ -314,6 +406,32 @@
                                         <button class="btn btn-success w-100" onclick="calcularCursoUnico()">
                                             <i class="bi bi-calculator-fill"></i>
                                             Calcular curso
+                                        </button>
+
+                                    </div>
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <button class="btn btn-secondary w-100" onclick="limpiar()">
+                                            <i class="bi bi-trash3-fill"></i>
+                                            Limpiar
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="accionesDirecto" class="acciones mt-5 d-none">
+
+                                <div class="row g-3 justify-content-center">
+
+                                    <div class="col col-sm-12 col-md-6 col-lg-4">
+
+                                        <button class="btn btn-success w-100" onclick="calcularPonderadoDirecto()">
+                                            <i class="bi bi-calculator-fill"></i>
+                                            Calcular ponderado
                                         </button>
 
                                     </div>
