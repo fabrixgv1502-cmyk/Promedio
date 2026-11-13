@@ -1,471 +1,212 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promedio de Cursos</title>
+    <title>Promedio ISIL · Calculadora de notas</title>
+    <meta name="description" content="Calcula tu promedio ponderado, la nota final de un curso y cuánto necesitas en la Nota 5 para aprobar.">
+    <meta name="theme-color" content="#2563eb">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-    <link rel="shortcut icon" href="Images/5271438.png" type="image/x-icon">
-
+    <link rel="icon" href="Images/5271438.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
+    <script>
+        try {
+            var t = localStorage.getItem("promedio-isil:theme")
+            if (t === "light" || t === "dark") document.documentElement.dataset.theme = t
+        } catch (e) {}
+    </script>
 </head>
 
-<body>
-
-    <main class="seccion-principal">
-
-        <section class="container">
-
-            <div class="row justify-content-center">
-
-                <div class="col col-sm-12 col-md-11 col-lg-10">
-
-                    <div class="card calculadora-card">
-
-                        <div class="card-body">
-
-                            <div class="text-center mb-4">
-
-                                <span class="etiqueta">
-                                    <i class="bi bi-mortarboard-fill"></i>
-                                    Calculadora Académica
-                                </span>
-
-                                <h1>Promedio</h1>
-
-                                <p class="subtitulo">
-                                    Primero selecciona tu carrera y luego elige cómo deseas calcular tu promedio académico.
-                                </p>
-
-                            </div>
-
-                            <section id="seleccionCarrera" class="panel-control mb-4">
-
-                                <input type="hidden" id="areaSeleccionada" value="">
-                                <input type="hidden" id="carreraSeleccionada" value="">
-
-                                <div class="titulo-panel">
-
-                                    <h2>
-                                        <i class="bi bi-mortarboard-fill"></i>
-                                        Selecciona tu carrera
-                                    </h2>
-
-                                    <p>
-                                        Primero selecciona un área, luego elige tu carrera y presiona siguiente.
-                                    </p>
-
-                                </div>
-
-                                <div class="row g-3 mb-4">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-                                        <button type="button" class="btn area-card-btn w-100" onclick="seleccionarArea('diseno', this)">
-                                            <i class="bi bi-palette-fill"></i>
-                                            <span>Área de Diseño</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-                                        <button type="button" class="btn area-card-btn w-100" onclick="seleccionarArea('comunicacion', this)">
-                                            <i class="bi bi-camera-reels-fill"></i>
-                                            <span>Área de Comunicación</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-                                        <button type="button" class="btn area-card-btn w-100" onclick="seleccionarArea('marketing', this)">
-                                            <i class="bi bi-megaphone-fill"></i>
-                                            <span>Área de Marketing</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-                                        <button type="button" class="btn area-card-btn w-100" onclick="seleccionarArea('negocios', this)">
-                                            <i class="bi bi-briefcase-fill"></i>
-                                            <span>Área de Negocios</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-                                        <button type="button" class="btn area-card-btn w-100" onclick="seleccionarArea('tecnologia', this)">
-                                            <i class="bi bi-cpu-fill"></i>
-                                            <span>Área de Tecnología</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-                                        <button type="button" class="btn area-card-btn w-100" onclick="seleccionarArea('servicios', this)">
-                                            <i class="bi bi-cup-hot-fill"></i>
-                                            <span>Área de Servicios</span>
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                                <div class="collapse" id="contenedorCarreras">
-
-                                    <div class="carreras-panel">
-
-                                        <h3 id="tituloAreaSeleccionada" class="titulo-carreras">
-                                            Carreras disponibles
-                                        </h3>
-
-                                        <div id="listaCarreras" class="row g-3"></div>
-
-                                    </div>
-
-                                </div>
-
-                                <div id="carreraTexto" class="alert alert-info text-center fw-bold mt-4 d-none"></div>
-
-                                <div class="row g-3 justify-content-center mt-4">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button id="btnSiguienteCarrera" class="btn btn-success w-100" onclick="continuarCarrera()" disabled>
-                                            <i class="bi bi-arrow-right-circle-fill"></i>
-                                            Siguiente
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </section>
-
-                            <section id="opciones" class="mb-4 d-none">
-
-                                <div class="row g-4 justify-content-center">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <div class="card opcion-card h-100" onclick="seleccionarModo('ponderado')">
-
-                                            <div class="card-body text-center">
-
-                                                <i class="bi bi-journals icono-opcion"></i>
-
-                                                <h3>Opción 1</h3>
-
-                                                <p>
-                                                    Quiero calcular mi promedio ponderado desde mis notas.
-                                                </p>
-
-                                                <button class="btn btn-primary w-100">
-                                                    Elegir opción
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <div class="card opcion-card h-100" onclick="seleccionarModo('curso')">
-
-                                            <div class="card-body text-center">
-
-                                                <i class="bi bi-journal-check icono-opcion"></i>
-
-                                                <h3>Opción 2</h3>
-
-                                                <p>
-                                                    Solo quiero ver mi promedio de un curso.
-                                                </p>
-
-                                                <button class="btn btn-success w-100">
-                                                    Elegir opción
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <div class="card opcion-card h-100" onclick="seleccionarModo('directo')">
-
-                                            <div class="card-body text-center">
-
-                                                <i class="bi bi-clipboard2-data icono-opcion"></i>
-
-                                                <h3>Opción 3</h3>
-
-                                                <p>
-                                                    Ya tengo el promedio final de cada curso.
-                                                </p>
-
-                                                <button class="btn btn-warning w-100">
-                                                    Elegir opción
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </section>
-
-                            <section id="panelPonderado" class="panel-control d-none">
-
-                                <div class="titulo-panel">
-
-                                    <h2>
-                                        <i class="bi bi-calculator-fill"></i>
-                                        Promedio ponderado del ciclo
-                                    </h2>
-
-                                    <p>
-                                        Ingresa tus cursos, créditos y notas. El sistema calculará la nota final de cada curso y luego aplicará el promedio ponderado con créditos.
-                                    </p>
-
-                                    <div class="formula-ponderado">
-
-                                        <div class="formula-titulo">
-                                            <i class="bi bi-calculator-fill"></i>
-                                            <span>Fórmula del promedio ponderado</span>
-                                        </div>
-
-                                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img">
-
-                                        <p>
-                                            Se multiplica la nota final de cada curso por sus créditos, se suman esos resultados y se divide entre la suma total de créditos.
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="row g-3 align-items-end justify-content-center">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <label for="cantidadCursos" class="form-label">
-                                            Cantidad de cursos
-                                        </label>
-
-                                        <div class="input-group">
-
-                                            <span class="input-group-text">
-                                                <i class="bi bi-journal-bookmark-fill"></i>
-                                            </span>
-
-                                            <input type="number" id="cantidadCursos" class="form-control" min="2" placeholder="Mínimo: 2 cursos" onchange="validarCantidadPonderado()">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-primary w-100" onclick="generarCursos()">
-                                            <i class="bi bi-plus-circle-fill"></i>
-                                            Generar cursos
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </section>
-
-                            <section id="panelCurso" class="panel-control d-none">
-
-                                <div class="titulo-panel">
-
-                                    <h2>
-                                        <i class="bi bi-journal-check"></i>
-                                        Promedio de un solo curso
-                                    </h2>
-
-                                    <p>
-                                        Selecciona el curso e ingresa sus notas para calcular el promedio final.
-                                    </p>
-
-                                </div>
-
-                                <div id="zonaCursoUnico"></div>
-
-                            </section>
-
-                            <section id="panelDirecto" class="panel-control d-none">
-
-                                <div class="titulo-panel">
-
-                                    <h2>
-                                        <i class="bi bi-clipboard2-data-fill"></i>
-                                        Promedio ponderado directo
-                                    </h2>
-
-                                    <p>
-                                        Usa esta opción si ya tienes el promedio final de cada curso. Solo debes ingresar el curso, sus créditos y su nota final.
-                                    </p>
-
-                                    <div class="formula-ponderado">
-
-                                        <div class="formula-titulo">
-                                            <i class="bi bi-calculator-fill"></i>
-                                            <span>Fórmula del promedio ponderado</span>
-                                        </div>
-
-                                        <img src="Images/b1844b7e-3ed5-4444-afa4-4bc90959598b.png" alt="Fórmula del promedio ponderado" class="formula-img">
-
-                                        <p>
-                                            Se suma cada nota final multiplicada por sus créditos y luego se divide entre la suma total de créditos.
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="row g-3 align-items-end justify-content-center">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <label for="cantidadCursosDirecto" class="form-label">
-                                            Cantidad de cursos
-                                        </label>
-
-                                        <div class="input-group">
-
-                                            <span class="input-group-text">
-                                                <i class="bi bi-journal-bookmark-fill"></i>
-                                            </span>
-
-                                            <input type="number" id="cantidadCursosDirecto" class="form-control" min="2" placeholder="Mínimo: 2 cursos">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-primary w-100" onclick="generarCursosDirecto()">
-                                            <i class="bi bi-plus-circle-fill"></i>
-                                            Generar cursos
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </section>
-
-                            <div id="zonaCursos" class="row g-4 mt-4"></div>
-
-                            <div id="zonaCursosDirecto" class="row g-4 mt-4"></div>
-
-                            <div id="accionesPonderado" class="acciones mt-5 d-none">
-
-                                <div class="row g-3 justify-content-center">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-success w-100" onclick="calcularPromedio()">
-                                            <i class="bi bi-calculator-fill"></i>
-                                            Calcular
-                                        </button>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-secondary w-100" onclick="limpiar()">
-                                            <i class="bi bi-trash3-fill"></i>
-                                            Limpiar
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div id="accionesCurso" class="acciones mt-5 d-none">
-
-                                <div class="row g-3 justify-content-center">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-success w-100" onclick="calcularCursoUnico()">
-                                            <i class="bi bi-calculator-fill"></i>
-                                            Calcular curso
-                                        </button>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-secondary w-100" onclick="limpiar()">
-                                            <i class="bi bi-trash3-fill"></i>
-                                            Limpiar
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div id="accionesDirecto" class="acciones mt-5 d-none">
-
-                                <div class="row g-3 justify-content-center">
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-success w-100" onclick="calcularPonderadoDirecto()">
-                                            <i class="bi bi-calculator-fill"></i>
-                                            Calcular ponderado
-                                        </button>
-
-                                    </div>
-
-                                    <div class="col col-sm-12 col-md-6 col-lg-4">
-
-                                        <button class="btn btn-secondary w-100" onclick="limpiar()">
-                                            <i class="bi bi-trash3-fill"></i>
-                                            Limpiar
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div id="resultado" class="resultado mt-4"></div>
-
-                        </div>
-
-                    </div>
-
+<body data-paso="1">
+
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <button type="button" class="brand" data-goto="1" aria-label="Ir al inicio">
+                <span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span>
+                <span class="brand-name">Promedio<b>ISIL</b></span>
+            </button>
+
+            <button type="button" class="icon-btn" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">
+                <i class="bi bi-moon-stars-fill"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="wrap main">
+
+        <section class="hero">
+            <span class="eyebrow"><i class="bi bi-stars"></i> Calculadora académica</span>
+            <h1>Calcula tu promedio <span class="accent">en segundos</span></h1>
+            <p>Elige tu carrera, escoge un método y mira tu resultado en tiempo real mientras ingresas tus notas.</p>
+        </section>
+
+        <nav class="stepper" aria-label="Progreso">
+            <button type="button" class="step" data-step="1">
+                <span class="step-num"><span>1</span><i class="bi bi-check-lg"></i></span>
+                <span class="step-text">Carrera<small>Elige tu carrera</small></span>
+            </button>
+            <span class="step-line" aria-hidden="true"></span>
+            <button type="button" class="step" data-step="2">
+                <span class="step-num"><span>2</span><i class="bi bi-check-lg"></i></span>
+                <span class="step-text">Método<small>Elige un método</small></span>
+            </button>
+            <span class="step-line" aria-hidden="true"></span>
+            <button type="button" class="step" data-step="3">
+                <span class="step-num"><span>3</span><i class="bi bi-check-lg"></i></span>
+                <span class="step-text">Notas<small>Ingresa tus notas</small></span>
+            </button>
+        </nav>
+
+        <!-- PASO 1: CARRERA -->
+        <section class="view" data-view="1">
+            <div class="panel">
+                <div class="panel-head">
+                    <h2>¿Qué carrera estudias?</h2>
+                    <p>Busca por nombre o filtra por área. Usaremos la malla de tu carrera para sugerirte los cursos.</p>
                 </div>
 
+                <label class="search">
+                    <i class="bi bi-search"></i>
+                    <input id="buscarCarrera" type="search" placeholder="Ej. Marketing, Ciberseguridad, Gastronomía…" autocomplete="off" aria-label="Buscar carrera">
+                </label>
+
+                <div class="chips" id="areaChips" role="group" aria-label="Filtrar por área"></div>
+
+                <div class="career-grid" id="listaCarreras"></div>
+
+                <div class="empty-inline" id="sinResultados" hidden>
+                    <i class="bi bi-search"></i>
+                    <span>No encontramos carreras con ese nombre.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASO 2: MÉTODO -->
+        <section class="view" data-view="2" hidden>
+            <div class="context-bar">
+                <div class="context-item">
+                    <span class="context-icon" id="ctxIcono2"><i class="bi bi-mortarboard-fill"></i></span>
+                    <div>
+                        <span class="context-label">Tu carrera</span>
+                        <strong id="ctxCarrera2"></strong>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-ghost btn-sm" data-goto="1">
+                    <i class="bi bi-arrow-left-right"></i> Cambiar
+                </button>
             </div>
 
+            <div class="panel">
+                <div class="panel-head">
+                    <h2>¿Qué quieres calcular?</h2>
+                    <p>Puedes cambiar de método cuando quieras; tus datos de cada método se guardan.</p>
+                </div>
+
+                <div class="mode-grid">
+                    <button type="button" class="mode-card" data-mode="ponderado">
+                        <span class="mode-icon"><i class="bi bi-calculator"></i></span>
+                        <span class="mode-tag">Más completo</span>
+                        <h3>Promedio ponderado del ciclo</h3>
+                        <p>Ingresa las 5 notas y créditos de cada curso. Obtén la nota final de cada uno y tu ponderado.</p>
+                        <span class="mode-go">Elegir <i class="bi bi-arrow-right"></i></span>
+                    </button>
+
+                    <button type="button" class="mode-card" data-mode="curso">
+                        <span class="mode-icon"><i class="bi bi-bullseye"></i></span>
+                        <h3>Un solo curso</h3>
+                        <p>Calcula la nota final de un curso o descubre cuánto necesitas en la Nota 5 para aprobar.</p>
+                        <span class="mode-go">Elegir <i class="bi bi-arrow-right"></i></span>
+                    </button>
+
+                    <button type="button" class="mode-card" data-mode="directo">
+                        <span class="mode-icon"><i class="bi bi-clipboard2-data"></i></span>
+                        <h3>Ya tengo mis notas finales</h3>
+                        <p>Ingresa la nota final y los créditos de cada curso para obtener tu promedio ponderado.</p>
+                        <span class="mode-go">Elegir <i class="bi bi-arrow-right"></i></span>
+                    </button>
+                </div>
+
+                <div class="rules">
+                    <div class="rule"><i class="bi bi-percent"></i><span><b>N1–N4</b> valen 15% cada una y la <b>N5</b> vale 40%.</span></div>
+                    <div class="rule"><i class="bi bi-check2-circle"></i><span>Se aprueba con <b>13</b> (la nota final se redondea: 12.5 → 13).</span></div>
+                    <div class="rule"><i class="bi bi-diagram-3"></i><span>Ponderado = Σ(nota × créditos) ÷ Σ créditos.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASO 3: NOTAS -->
+        <section class="view" data-view="3" hidden>
+            <div class="context-bar">
+                <div class="context-item">
+                    <span class="context-icon" id="ctxIcono3"><i class="bi bi-mortarboard-fill"></i></span>
+                    <div>
+                        <span class="context-label">Tu carrera</span>
+                        <strong id="ctxCarrera3"></strong>
+                    </div>
+                </div>
+                <div class="context-actions">
+                    <span class="context-mode" id="ctxModo"></span>
+                    <button type="button" class="btn btn-ghost btn-sm" data-goto="2">
+                        <i class="bi bi-arrow-left-right"></i> Cambiar método
+                    </button>
+                </div>
+            </div>
+
+            <div class="workspace">
+                <div class="inputs-col">
+                    <div class="section-head">
+                        <div>
+                            <h2 id="tituloModo"></h2>
+                            <p id="descModo"></p>
+                        </div>
+                    </div>
+
+                    <div id="listaCursos" class="course-list"></div>
+
+                    <div class="list-actions">
+                        <button type="button" class="btn btn-soft" id="btnAgregar">
+                            <i class="bi bi-plus-lg"></i> Agregar curso
+                        </button>
+                        <button type="button" class="btn btn-ghost" id="btnLimpiar">
+                            <i class="bi bi-arrow-counterclockwise"></i> Limpiar todo
+                        </button>
+                    </div>
+
+                    <p class="hint">
+                        <i class="bi bi-lightbulb"></i>
+                        Tip: usa <kbd>Enter</kbd> para pasar a la siguiente nota y <kbd>↑</kbd> <kbd>↓</kbd> para subir o bajar 0.5. Tus datos se guardan en este navegador.
+                    </p>
+                </div>
+
+                <aside class="summary-col">
+                    <div class="summary" id="resumen" aria-live="polite"></div>
+                </aside>
+            </div>
+
+            <section class="panel detail" id="detalle" hidden></section>
+
+            <datalist id="cursosCarrera"></datalist>
         </section>
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <footer class="footer wrap">
+        <span>Hecho para estudiantes ISIL · Los resultados son referenciales.</span>
+    </footer>
 
+    <div class="mobile-bar" id="mobileBar">
+        <div class="mobile-bar-text" id="mobileBarText"></div>
+        <button type="button" class="btn btn-primary btn-sm" id="mobileBarBtn">Ver resultado</button>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="data.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
